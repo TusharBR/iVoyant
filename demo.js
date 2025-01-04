@@ -22,11 +22,10 @@
 //for-of loop
 //let arr:{first:number,second:number,third:number}={first:1,second:2,third:3}//Error:is not an array type or a string type.
 // const arr: number[] = [1, 2, 3];//for-of works for arr 
-var arr = "iVoyant";
-for (var _i = 0, arr_1 = arr; _i < arr_1.length; _i++) {
-    var num = arr_1[_i];
-    console.log({ num: num }); //1,2,3
-}
+// let arr:string="iVoyant"//i V o y a n t
+// for (const num of arr) {
+//   console.log(num);//1,2,3
+// }
 //arrow functions
 // const func=(para1:number):number=>
 // {
@@ -50,6 +49,12 @@ for (var _i = 0, arr_1 = arr; _i < arr_1.length; _i++) {
 //     return obj
 // }
 // func1().func();
+//import,export
+// const project_title=(): string => "Hello";
+// export default project_title //(File name:1.ts)//exporting project_title from 1.ts
+// import { ptitle } from './1';//(File name:2.ts)//importing project_title from 1.ts to 2.ts
+//In Default exports we can use a custom name(project_title->ptitle) when importing.
+//but In non-default exports we cannot custom name(project_title->ptitle)rather use project_title as project_title only when importing else it will give error.
 //destructing
 // const nums:number []=[1,2,3,4,5,3,2]
 // const [fst,sec,...third]=nums

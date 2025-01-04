@@ -66,6 +66,14 @@
 
 // func1().func();
 
+//import,export
+// const project_title=(): string => "Hello";
+// export default project_title //(File name:1.ts)//exporting project_title from 1.ts
+// import { ptitle } from './1';//(File name:2.ts)//importing project_title from 1.ts to 2.ts
+//In Default exports we can use a custom name(project_title->ptitle) when importing.
+//but In non-default exports we cannot custom name(project_title->ptitle)rather use project_title as project_title only when importing else it will give error.
+
+
 
 //destructing
 
