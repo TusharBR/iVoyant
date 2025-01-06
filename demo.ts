@@ -99,3 +99,23 @@
 
 // const runfunc = (myname,mycity,mycitycode):string=>`My name is ${myname} i am basically from ${mycity} - ${mycitycode}`//${variable_name} is used for template literal(concate)
 // console.log(runfunc('Tushar',"Harihara",577601))//My name is Tushar i am basically from Harihara - 577601
+
+
+ 
+interface Person{
+    name: string;
+    age: number;
+  }
+  
+  const person: Person = {
+    name: 'John Doe',
+    age: 30,
+  };
+
+function abc(user:Person)
+{
+    console.log(user.name+""+"first")
+    user.name="rama"
+    console.log(user.name)
+}
+  console.log(abc(person))
