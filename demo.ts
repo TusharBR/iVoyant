@@ -119,3 +119,5 @@ function abc(user:Person)
     console.log(user.name)
 }
   console.log(abc(person))
+
+  
