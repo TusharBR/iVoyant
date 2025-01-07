@@ -60,69 +60,69 @@ console.log(stringWithSpaces.trim());  // "30 Days Of JavaScript"
 // 20. Use startsWith() method with the string '30 Days Of JavaScript' and make the result true
 console.log(senc.startsWith('30'));  // true
 
-// 22. Use endsWith() method with the string '30 Days Of JavaScript' and make the result true
+// 21. Use endsWith() method with the string '30 Days Of JavaScript' and make the result true
 console.log(senc.endsWith('JavaScript'));  // true
 
-// 23. Use match() method to find all the 'a's in '30 Days Of JavaScript'
+// 22. Use match() method to find all the 'a's in '30 Days Of JavaScript'
 console.log(senc.match(/a/g));  // ["a", "a", "a"]
 
-// 24. Use concat() and merge '30 Days of' and 'JavaScript' to a single string, '30 Days Of JavaScript'
+// 23. Use concat() and merge '30 Days of' and 'JavaScript' to a single string, '30 Days Of JavaScript'
 let p1 = '30 Days of';
 let p2 = 'JavaScript';
 console.log(p1.concat(' ', p2));  // "30 Days of JavaScript"
 
-// 25. Use repeat() method to print '30 Days Of JavaScript' 2 times
+// 24. Use repeat() method to print '30 Days Of JavaScript' 2 times
 console.log(senc.repeat(2));  // "30 Days Of JavaScript30 Days Of JavaScript"
 
 
 //****************************************************Level 2************************************************
-// Task 1: Using console.log() print out the following statement
+//  1: Using console.log() print out the following statement
 console.log("The quote 'There is no exercise better for the heart than reaching down and lifting people up.' by John Holmes teaches us to help one another.");
 
-// Task 2: Using console.log() print out the following quote by Mother Teresa
+//  2: Using console.log() print out the following quote by Mother Teresa
 console.log('"Love is not patronizing and charity isn\'t about pity, it is about love. Charity and love are the same -- with charity you give love, so don\'t just give money but reach out your hand instead."');
 
-// Task 3: Check if typeof '10' is exactly equal to 10. If not, make it exactly equal
+//  3: Check if typeof '10' is exactly equal to 10. If not, make it exactly equal
 let num :string|number= '10';
 if (typeof num !== 'number') {
   num = Number(num); 
 }
 console.log(num); // 10 //number type
 
-// Task 4: Check if parseFloat('9.8') is equal to 10. If not, make it exactly equal to 10
+//  4: Check if parseFloat('9.8') is equal to 10. If not, make it exactly equal to 10
 let num2 = parseFloat('9.8');
 if (num2 !== 10) {
  num2= Math.ceil(num2) 
 }
 console.log(num2); // Output: 10
 
-// Task 5: Check if 'on' is found in both 'python' and 'jargon'
+//  5: Check if 'on' is found in both 'python' and 'jargon'
 const py = 'python';
 const ja = 'jargon';
 console.log(py.includes('on') && ja.includes('on')); // Output: true
 
-// Task 6: Check if 'jargon' is in the sentence
+//  6: Check if 'jargon' is in the sentence
 const sentence2 = 'I hope this course is not full of jargon.';
 console.log(sentence2.includes('jargon')); // Output: true
 
-// Task 7: Generate a random number between 0 and 100 inclusively
+//  7: Generate a random number between 0 and 100 inclusively
 const randomnum1 = Math.floor(Math.random() * 101);
 console.log("random number between 0 and 100 inclusively"+randomnum1); // 64
 
-// Task 8: Generate a random number between 50 and 100 inclusively
+//  8: Generate a random number between 50 and 100 inclusively
 const randomnum2 = Math.floor(Math.random() * 50) + 50;
 console.log("random number between 50 and 100 inclusively"+randomnum2); // 76
 
-// Task 9: Generate a random number between 0 and 255 inclusively
+//  9: Generate a random number between 0 and 255 inclusively
 const randomnum3 = Math.floor(Math.random() * 256);
 console.log("random number between 0 and 255 inclusively"+randomnum3); //135
 
-// Task 10: Access the 'JavaScript' string characters using a random number
+//  10: Access the 'JavaScript' string characters using a random number
 const str2 = 'JavaScript';
 const randomindx = Math.floor(Math.random() * str2.length);
 console.log(str2[randomindx]); // r
 
-// Task 11: Use console.log() and escape characters to print the following pattern
+//  11: Use console.log() and escape characters to print the following pattern
 let result = "";
 for(let fi=1;fi<5+1;fi++){
     result += fi + " ";
@@ -135,17 +135,18 @@ for(let fi=1;fi<5+1;fi++){
         result='';
 }
 
-// Task 12: Use substr() to slice out the phrase 'because because because' from the sentence
+//  12: Use substr() to slice out the phrase 'because because because' from the sentence
 let slicedPhrase = 'You cannot end a sentence with because because because is a conjunction'
 let fr=slicedPhrase.substring(slicedPhrase.indexOf('because'), slicedPhrase.lastIndexOf('because')+"because".length);
 console.log(fr); // Output: 'because because because'
 
 
-
+//*********************************level3******************************** */
+//question 1:
 const str11 = "Love is the best thing in this world. Some found their love and some are still looking for their love.";
 const result11 = str11.match(/love/ig); //[ 'Love', 'love', 'love' ]
 console.log(result11?.length); //3
-
+//question 2
 const str22 = "You cannot end a sentence with because because because is a conjunction";
 const result22 = str22.match(/because/ig); //[ 'because', 'because', 'because' ]
 console.log(result22?.length); //3
