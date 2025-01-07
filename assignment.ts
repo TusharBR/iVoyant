@@ -138,7 +138,7 @@ for(let fi=1;fi<5+1;fi++){
 //  12: Use substr() to slice out the phrase 'because because because' from the sentence
 let slicedPhrase = 'You cannot end a sentence with because because because is a conjunction'
 let fr=slicedPhrase.substring(slicedPhrase.indexOf('because'), slicedPhrase.lastIndexOf('because')+"because".length);
-console.log(fr); // Output: 'because because because'
+console.log(fr); //'because because because'
 
 
 //*********************************level3******************************** */
