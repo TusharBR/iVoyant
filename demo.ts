@@ -102,22 +102,129 @@
 
 
  
-interface Person{
-    name: string;
-    age: number;
-  }
+// interface Person{
+//     name: string;
+//     age: number;
+//   }
   
-  const person: Person = {
-    name: 'John Doe',
-    age: 30,
-  };
+//   const person: Person = {
+//     name: 'John Doe',
+//     age: 30,
+//   };
 
-function abc(user:Person)
-{
-    console.log(user.name+""+"first")
-    user.name="rama"
-    console.log(user.name)
-}
-  console.log(abc(person))
+// function abc(user:Person)
+// {
+//     console.log(user.name+""+"first")
+//     user.name="rama"
+//     console.log(user.name)
+// }
+//   console.log(abc(person))
 
+// interface person{
+//     name:string,
+//     color:string,
+//     age:number,
+//     height:number,
+//     salary:number
+// }
+// interface ge extends person{
+//     pf:boolean
+// }
+// class Employee implements person{
+//     name:string="bcd"
+//     color:string;
+//     age:number;
+//     height:number;
+//     salary:number;
+//     constructor( name:string, color:string, age:number, height:number, salary:number)
+//         {
+//             console.log(this.name)//bcd
+//             console.log(this.name=name)//abc
+//         }
+
+// }
+// let e1=new Employee("abc","white",22,5,12344)
+
+// let a:string|number="pop";
+
+// type cityname={name:string};
+// type citypin={pin:number};
+// type city=cityname&citypin;
+// let obj:city={
+//     name:"harihar",
+//     pin:123456
+// }
+// console.log(typeof obj,obj.name,obj.pin)
+
+// function isString(value: unknown): value is string {
+//     return typeof value === "string";
+//   }
+
+//   let input: unknown = "Hello";
+//   if (isString(input)) {
+//     console.log(input.toUpperCase()); // Valid because input is now a string
+//   }
+//   type ID = string | number;
+
+// let userId: ID = "12345";
+// userId = 67890; // Valid
+
+
+//clas
+// class Animal {
+//     protected name: string;
   
+//     constructor(name: string) {
+//       this.name = name;
+//     }
+  
+//     public makeSound(): void {
+//       console.log(`${this.name} makes a sound.`);
+//     }
+//   }
+  
+//   class Dog extends Animal {
+//     constructor(name: string) {
+//       super(name);
+//     }
+  
+//     public bark(): void {
+//       console.log(`${this.name} barks!`);
+//     }
+//   }
+  
+//   const dog = new Dog("Buddy");
+//   dog.makeSound(); // Buddy makes a sound.
+//   dog.bark(); // Buddy barks!
+// let someValue: any = "Hello,   TypeScript!";
+// console.log((<string>someValue).length)
+
+
+// let  arr:readonly[string,number]=["tushar",99]
+
+// arr.push("harihar")
+// console.log(arr)
+
+
+// type user={
+//     nameis:string,
+//     ageis:number
+// }
+// function myfunc(users:user)
+// {
+// console.log(users.nameis)
+// }
+// console.log(myfunc({nameis:"Tushar",ageis:19}))     
+
+
+// let arr:(string | number)[]=[1,2,"hi"]//can assign both astrings , number
+// let arr:string [] | number[]=[1,2,3]//cannot assign both a strings , number either complete strings or complete number
+
+
+// let seatinaeroplane:"corner"|"window"|"middle";
+// seatinaeroplane="corner";//ok
+// seatinaeroplane="crew";//error
+
+//tuples
+let tuples:[string,boolean]=["jaggu",true];
+console.log(tuples)
