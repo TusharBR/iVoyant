@@ -1,0 +1,8 @@
+h1{
+    text-align: center;
+}
+.maindiv{
+    display: flex;
+    justify-content: space-between;
+
+}

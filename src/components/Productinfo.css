@@ -1,0 +1,10 @@
+.proinfomaindiv
+{
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+}
+.proinfodiv
+{
+font-size: 2rem;
+}
