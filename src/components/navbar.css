@@ -1,0 +1,8 @@
+.mainnav
+{
+    list-style:none;display:flex;border:2px solid black; color:"black"
+}
+.fouropt
+{
+    display:flex;padding-left:50%;
+}
