@@ -1,0 +1,16 @@
+.mainbtn
+{
+    display: flex;
+    justify-content:space-evenly;       
+   
+    
+}
+.btnsall
+{
+    border-radius: 10px;
+    font-size: 1.2rem;
+    box-shadow: 15px 15px 10px solid grey;
+    padding: 1.5%;
+    background-color: rgb(1, 154, 139);
+    color: white;
+}

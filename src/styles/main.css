@@ -1,0 +1,17 @@
+.mainclass
+{
+    display: flex;
+}
+.subdivs
+{
+    margin: 20px;
+    width: 30%;
+    height: auto;
+    border: 2px solid rgb(0, 88, 102);
+}   
+
+select
+{
+    width: 100%;
+    height:5vh;
+}

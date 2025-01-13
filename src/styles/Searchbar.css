@@ -1,0 +1,25 @@
+.searchdiv
+{
+    display: flex;
+   
+
+    
+}
+.searchbar
+{
+    width: 90%;
+    height: 5vh;
+    color:rgb(0, 14, 91);
+    font-size: 1.2rem ;
+}
+
+.Searchbtn
+{
+    width: 10%;
+    border: none;
+    margin: 0 1% 0 1%;
+    background-color: rgb(1, 154, 139);
+    font-size: 100%;
+    color: White;
+    
+}
