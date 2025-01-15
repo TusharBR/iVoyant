@@ -1,0 +1,9 @@
+span:nth-child(1)
+{
+  text-decoration: underline;
+  color: red;
+}
+span:not(:nth-child(1)) {
+  text-decoration: underline;
+  color: rgb(25, 0, 255);
+}
