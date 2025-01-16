@@ -5,7 +5,7 @@ interface details {
   age: number;
 }
 
-const Profile: React.FC = () => {
+const Profile= () => {
   const [formData, setFormData] = useState<details>({ name: "", age:0 });
 
   const handleChange = (e) => {
