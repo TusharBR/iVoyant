@@ -24,6 +24,7 @@ const Profile= () => {
       <br/>
       <label htmlFor="">age : </label>
       <input
+      type="number"
         name="age"
         value={formData.age}
         onChange={handleChange}
