@@ -1,0 +1,17 @@
+.counterbutton
+{
+  padding: 10px;
+  border: 2px solid red;
+  display: inline;
+  cursor: pointer;
+}
+.arritems li
+{
+  color: blue;
+  text-decoration: underline;
+}
+.tododiv
+{
+  padding: 10px;
+  border: 2px solid red;
+}
