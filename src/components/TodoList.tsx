@@ -14,7 +14,7 @@ const TodoList=()=> {
         newarray([...oldarray,oldinput])
         newinput("");
     }
-    const handlechange=(e)=>{
+    const handlechange=(e: React.ChangeEvent<HTMLInputElement>) =>{
         newinput(e.target.value)
     }
   return (

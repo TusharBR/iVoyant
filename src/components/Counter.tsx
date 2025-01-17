@@ -7,8 +7,8 @@ const Counter = ()=>{
     }
     return(
       <div>
-        <h1>My Counter App - {count}</h1>
-        <h2 onClick={updatemyfunc} className="counterbutton">Button</h2>
+        <h2>My Counter App - {count}</h2>
+        <h3 onClick={updatemyfunc} className="counterbutton">Button</h3>
       </div>
     )
 }

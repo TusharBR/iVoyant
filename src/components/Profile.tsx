@@ -8,7 +8,7 @@ interface details {
 const Profile= () => {
   const [formData, setFormData] = useState<details>({ name: "", age:0 });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>)  => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
