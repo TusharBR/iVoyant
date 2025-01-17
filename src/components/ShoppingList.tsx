@@ -1,10 +1,8 @@
-import  { useState } from "react";
-
+import  {useState} from "react";
 interface details {
   name: string;
   quantity: number;
 }
-
 const ShoppingList= () => {
   const [formData, setFormData] = useState<details[]>([]);
   const [oit,nit]=useState<details>({ name: "", quantity:0});
@@ -50,9 +48,7 @@ const ShoppingList= () => {
         )
     })}
 </ol>
-
-
-    </div>
+</div>
   );
 };
 export default ShoppingList

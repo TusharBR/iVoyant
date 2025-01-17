@@ -1,14 +1,9 @@
-import { useEffect, useState } from "react"
-
+import {  useState } from "react"
 
 const TodoList=()=> {
     const [oldarray,newarray]=useState<string[]>([]);
     const [oldinput,newinput]=useState<string>("");
-    useEffect(()=>
-    {
-        console.log(oldarray)
-        
-    },[oldarray])
+   
   
     const additems=()=>{
         newarray([...oldarray,oldinput])
@@ -16,10 +11,15 @@ const TodoList=()=> {
     }
     const handlechange=(e: React.ChangeEvent<HTMLInputElement>) =>{
         newinput(e.target.value)
+       const tm= setTimeout(()=>{
+            console.log(e.target.value)
+            clearTimeout(tm)
+        },3000)
     }
+    
   return (
     <div className="tododiv"><label htmlFor="">Items : </label>
-   <input name="items" value={oldinput} onChange={handlechange} placeholder="Add items here"/>
+   <input name="items" value={oldinput} onChange={handlechange}  placeholder="Add items here"/>
    &nbsp;&nbsp;<button disabled={!oldinput?true:false} onClick={additems}>Add item</button>
    <p>Items in array are</p>
 <ol className="arritems">
@@ -29,7 +29,6 @@ const TodoList=()=> {
         )
     })}
 </ol>
-
    </div>
   )
 }
