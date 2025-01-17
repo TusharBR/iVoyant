@@ -1,0 +1,37 @@
+h3
+{
+    text-align: center;
+}
+.rightside div,.leftside1
+{
+    
+    height: 70vh;margin: 10px;
+
+}
+.rightside div
+{
+    width:20vw;
+    display: flex;
+    align-items: center;
+   }
+.leftside1
+{
+    width:60vw;
+   }
+
+.bothsides
+{
+    display: flex;  
+}
+.leftside1 div{
+    margin-bottom:30px;
+}
+.leftside1 div input,.btnsubmit,textarea{
+    width: 100%;
+    height:4vh;
+   
+}
+textarea{
+
+    height:12vh
+}

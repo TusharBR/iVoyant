@@ -1,0 +1,7 @@
+
+nav ol{
+    list-style: none; display: flex;justify-content:space-around;
+}
+.mycheckbox{
+   transform: scale(1.6);
+}
