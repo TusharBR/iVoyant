@@ -1,13 +1,6 @@
 
 import "../styles/navbar.css"
-
-interface styling
-{
-  color:string,
-  backgroundColor:string
-  padding:string
-  border:string
-} 
+import { styling } from '../types/styling'
   type Props= {
       checkfunc:()=>void;
       darkstyle:styling
@@ -22,7 +15,7 @@ const Navbar=({checkfunc,darkstyle,beforeclk}:Props)=> {
         <nav style={darkstyle}><ol><li>Logo</li>
         <li>Home</li>
         <li>About</li>
-        <li className="cb"><input className="mycheckbox" type="checkbox" onClick={checkfunc}  checked={beforeclk}/> : {beforeclk===false?"Dark mode":"Light Mode"}</li>
+        <li className="cb"><input className="mycheckbox" type="checkbox" onClick={checkfunc} readOnly checked={beforeclk}/> : {beforeclk===false?"Dark mode":"Light Mode"}</li>
         </ol></nav>
 
   )

@@ -1,14 +1,7 @@
 
 import { useState } from "react"
 import "../styles/Maincontainer.css"
-
-interface styling
-{
-  color:string,
-  backgroundColor:string
-  padding:string
-  border:string
-} 
+import { styling } from "../types/styling"
 
   type Props= {darkstyle:styling}
 
@@ -23,6 +16,7 @@ const Maincontainer=({darkstyle}:Props)=> {
   }
  
   const [oit,nit]=useState<details>({ name: "", email: "",pincode: 577000, city: "",area: "" });
+  const [beforesmt,aftersmt]=useState<details>({ name: "", email: "",pincode: 577000, city: "",area: "" });
     const myobj={...darkstyle,padding:"50px"};
     const myobj1={...darkstyle,padding:"0px"};
    
@@ -32,7 +26,9 @@ const Maincontainer=({darkstyle}:Props)=> {
         nit({ ...oit, [e.target.name]: e.target.value });
       };
       const handleAddItem = ()  => {
-        nit({name: "", email: "",pincode: 11111, city: "",area: "" });
+        
+        aftersmt({...beforesmt,name:oit.name,email:oit.email,pincode:oit.pincode,city:oit.city,area:oit.area});
+        nit({name: "", email: "",pincode: 577000, city: "",area: "" });
       };
       
   return (
@@ -72,12 +68,11 @@ const Maincontainer=({darkstyle}:Props)=> {
           </div>
           <div className="rightside">
         <div style={myobj}>
-      
-               Name:{oit.name} <br />
-               Age:{oit.email} <br />
-               City:{oit.city} <br />
-               Pincode:{oit.pincode} <br />
-               Area:{oit.area} <br />
+               Name: {beforesmt.name}<br />
+               Email: {beforesmt.email} <br />
+               City: {beforesmt.city}<br />
+               Pincode: {beforesmt.pincode}<br />
+               Area: {beforesmt.area}<br />
             
           </div>
           </div>
