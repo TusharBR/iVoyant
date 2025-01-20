@@ -4,6 +4,7 @@ input{
 h3
 {
     text-align: center;
+    margin: 0;
 }
 .rightside div,.leftside1
 {
@@ -18,14 +19,15 @@ h3
     align-items: center;
     line-height: 200%;
    }
-.leftside1
+.leftside
 {
-    width:60vw;
+    width:100%;
    }
 
 .bothsides
 {
     display: flex;  
+    width: 98vw;
 }
 .leftside1 div{
     margin-bottom:30px;
@@ -39,4 +41,7 @@ textarea{
 
     height:12vh
 }
-
+button
+{
+    margin-top: 10px;
+}

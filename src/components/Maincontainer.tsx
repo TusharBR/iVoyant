@@ -17,6 +17,7 @@ const Maincontainer=({darkstyle}:Props)=> {
  
   const [oit,nit]=useState<details>({ name: "", email: "",pincode: 577000, city: "",area: "" });
   const [beforesmt,aftersmt]=useState<details>({ name: "", email: "",pincode: 577000, city: "",area: "" });
+  const [disablesb,enablesb]=useState<boolean>(false);
     const myobj={...darkstyle,padding:"50px"};
     const myobj1={...darkstyle,padding:"0px"};
    
@@ -63,18 +64,20 @@ const Maincontainer=({darkstyle}:Props)=> {
   </div>
 
   <button style={myobj1} type="submit" className="btnsubmit">Submit</button>
+
+  <button style={myobj1} onClick={()=>enablesb(!disablesb)} className="btnsubmit">Show Details</button>
 </form>
  </div>
           </div>
           <div className="rightside">
-        <div style={myobj}>
+        {disablesb?<div style={myobj}>
                Name: {beforesmt.name}<br />
                Email: {beforesmt.email} <br />
                City: {beforesmt.city}<br />
                Pincode: {beforesmt.pincode}<br />
                Area: {beforesmt.area}<br />
             
-          </div>
+          </div>:""}
           </div>
 
 
