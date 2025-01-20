@@ -5,3 +5,12 @@ export interface styling
     padding:string
     border:string
   }
+
+  export interface details {
+    name: string;
+    email: string;
+    city: string;
+    area: string;
+    pincode:number;
+
+  }

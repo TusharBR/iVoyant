@@ -1,19 +1,11 @@
 
 import { useState } from "react"
 import "../styles/Maincontainer.css"
-import { styling } from "../types/styling"
-
+import { styling ,details} from "../types/styling"
   type Props= {darkstyle:styling}
 
 const Maincontainer=({darkstyle}:Props)=> {
-  interface details {
-    name: string;
-    email: string;
-    city: string;
-    area: string;
-    pincode:number;
 
-  }
  
   const [oit,nit]=useState<details>({ name: "", email: "",pincode: 577000, city: "",area: "" });
   const [beforesmt,aftersmt]=useState<details>({ name: "", email: "",pincode: 577000, city: "",area: "" });
