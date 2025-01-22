@@ -23,8 +23,9 @@ const App = () => {
   return (
     <div>
      <div className="timer1">
-     <h2>Timer 1 with ref</h2>
+     <h2>Timer with ref</h2>
      <h1>{timer1}</h1>
+     <input type="range" value={timer1}/>range:
       <button onClick={handlestart} disabled={btn}>Start</button>
       <button onClick={handlestop} disabled={!btn}>Stop</button>
      </div>
