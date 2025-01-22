@@ -1,5 +1,4 @@
 
-
 import { useState, useEffect } from 'react';
 
 const data = ['kgf','kgf2','kantara','max','goat','martin'];
@@ -34,3 +33,4 @@ useEffect(()=>{
   );
 };
 export default App;
+
