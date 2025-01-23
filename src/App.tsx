@@ -20,14 +20,14 @@ const App = () => {
   }
   return (
     <div>
-      <nav ref={inputref} style={{border:"2px solid black",display:"flex",justifyContent:"space-evenly",listStyle:"none",padding:"10px",color:"black"}}>
+      <nav ref={inputref} style={{backgroundColor:"white",border:"2px solid black",display:"flex",justifyContent:"space-evenly",listStyle:"none",padding:"10px",color:"black"}}>
         <li>home</li>
         <li>about</li>
         <li>contact</li>
         <li>login</li>
         <li><input type='checkbox' onClick={myfunc} /></li>
       </nav>
-      <Component myfunc={myfunc}/>
+      <Component pref={inputref}/>
     </div>
   )
 }
