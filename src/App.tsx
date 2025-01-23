@@ -14,25 +14,32 @@ const App = () => {
  type:'push'|"pop"|'shift'|"unshift"
 }&{inp?:typeof first}
   const reducerfunction=(state:strtype,action:actiontype):strtype=>{
+    const newarr = [...state.arr];
     switch(action.type)
     {
       case "push":{
-        state.arr.push(Number(action.inp));
-        return {arr:state.arr};
+        newarr.push(Number(action.inp));
+        return {arr:newarr}
       }
       case "pop":{
-        state.arr.pop()
-        return {arr:state.arr};
+        // state.arr.pop()
+        // return {arr:state.arr};
+        newarr.pop()
+        return {arr:newarr};
       }
       case "unshift":{
         
-        state.arr.unshift(Number(action.inp))
-        return {arr:state.arr};
+        // state.arr.unshift(Number(action.inp))
+        // return {arr:state.arr};
+         newarr.unshift(Number(action.inp))
+         return {arr:newarr};
 
       }
       case "shift":{
-        state.arr.shift();
-        return {arr:state.arr};
+          // state.arr.shift()
+        // return {arr:state.arr};
+        newarr.shift()
+        return {arr:newarr};
       }
       default :return{arr:state.arr}
       
