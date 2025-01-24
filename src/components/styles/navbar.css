@@ -1,6 +1,9 @@
 nav ol{
     list-style: none; display: flex;justify-content:space-around;
+    align-items: center;
+  
 }
-.mycheckbox{
-   transform: scale(1.6);
+button{
+    border: none;
+    background: none;
 }

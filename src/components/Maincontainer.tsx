@@ -38,7 +38,7 @@ console.log(beforesmt)
               <div className="leftside">
               <div style={myobj} className="leftside1"><form onSubmit={(e) => {e.preventDefault();handleAddItem()}}>
     
-                <h3>Fill all the fields</h3>
+                <h3>Fill form for admi  ssion</h3>
       <div>
         <label htmlFor="name">Name:</label>
         <input   onChange={handleChange} value={oit.name}  style={myobj1} type="text" id="name" name="name" placeholder="Enter your name" required />

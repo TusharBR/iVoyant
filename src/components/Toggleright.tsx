@@ -12,7 +12,7 @@ const Toggleright = ({disablesb}:disabletype) => {
   return (
 
     <div  className="rightside" >
-    {disablesb?<div style={{...myobj,display:"flex",flexDirection:"column",overflow:"scroll",overflowX:"hidden"}}>
+    {disablesb?<div style={{...myobj,display:"flex",flexDirection:"column",overflow:"scroll",overflowX:"hidden"}}>Student details:
         {beforesmt.map((ele)=>[
             <div style={{border:"2px solid white",display:"flex",justifyContent:"center",padding:0,margin:0}}>
           Name: {ele?.name}<br />
