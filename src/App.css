@@ -1,47 +1,7 @@
-input{
-  cursor: default;
-}
-h3
+.leftright
 {
-  text-align: center;
-  margin: 0;
-}
-.rightside div,.leftside1
-{
-  
-  height: 50vh;margin: 10px;
-
-}
-.rightside div
-{
-  width:20vw;
+  width:98vw;
+  height:96vh;
+  border: 1px solid red;
   display: flex;
-  align-items: center;
-  line-height: 200%;
- }
-.leftside
-{
-  width:100%;
- }
-
-.bothsides
-{
-  display: flex;  
-  width: 98vw;
-}
-.leftside1 div{
-  margin-bottom:30px;
-}
-.leftside1 div input,.btnsubmit,textarea{
-  width: 100%;
-  height:4vh;
- 
-}
-textarea{
-
-  height:12vh
-}
-button
-{
-  margin-top: 10px;
 }

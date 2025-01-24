@@ -1,15 +1,17 @@
 
-import { useContext } from 'react'
 import './App.css'
-import {first1} from "./components/Maincontainer"
-
+import Leftside from './assets/compoenets/Leftside'
+import Rightside from './assets/compoenets/Rightside'
 
 function App() {
- const first = useContext(first1)
+
 
   return (
     <>
-     {first}
+      <div className='leftright'>
+        <Leftside/>
+        <Rightside/>
+      </div>
     </>
   )
 }
