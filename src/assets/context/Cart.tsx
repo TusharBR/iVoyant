@@ -9,7 +9,7 @@ interface objtype{
 interface valuetype{ "products": objtype[],before: objtype[]; 
   after: (value: objtype[]) => void;}
 
- export const Cartcontext=createContext<valuetype>({"products": [
+const Cartcontext=createContext<valuetype>({"products": [
           {
             "productId": "",
             "productName": "",
@@ -87,3 +87,4 @@ const Cart=(props:{children:ReactNode})=>{
     )
 }
 export default Cart
+export {Cartcontext}
