@@ -22,22 +22,16 @@ const App = () => {
         return {arr:newarr}
       }
       case "pop":{
-        // state.arr.pop()
-        // return {arr:state.arr};
+
         newarr.pop()
         return {arr:newarr};
       }
       case "unshift":{
-        
-        // state.arr.unshift(Number(action.inp))
-        // return {arr:state.arr};
          newarr.unshift(Number(action.inp))
          return {arr:newarr};
 
       }
       case "shift":{
-          // state.arr.shift()
-        // return {arr:state.arr};
         newarr.shift()
         return {arr:newarr};
       }
