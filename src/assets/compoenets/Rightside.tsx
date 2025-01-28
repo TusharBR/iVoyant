@@ -3,30 +3,21 @@ import { useContext } from "react"
 import {Cartcontext} from "../context/Cart"
 const Rightside=()=>
     {
-        const {before,after} = useContext(Cartcontext); // Pro
+        const {before,after} = useContext(Cartcontext); 
         console.log(before.length)
         const removeitems = (val:number) => {
-           // const [a,b,c]=val;
-
-           const updatedBefore = before.filter((ele,ci) => ci !== val);
-   
-           
-           // Update the state with the new array
+                    const updatedBefore = before.filter((ele,ci) => ci !== val);
            after(updatedBefore);
        
            console.log("Updated state after removal:", updatedBefore,before);
-            // after([...before,{
-            //     "productId": a,
-            //     "productName":b,
-            //     "productPrice":Number(c)
-            //   }]);
-          
+
         };
         console.log(before,"rightside")
         return(
            <>
             
             <div className="rightside">
+               
                 {before.map((ele,ci)=>{
                     return(
                         <div key={ele.productId} className="productcard" >
