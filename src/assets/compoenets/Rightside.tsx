@@ -6,7 +6,7 @@ const Rightside=()=>
         const {before,after} = useContext(Cartcontext); 
         console.log(before.length)
         const removeitems = (val:number) => {
-                    const updatedBefore = before.filter((ele,ci) => ci !== val);
+                    const updatedBefore = before.filter((_,ci) => ci !== val);
                                                  after(updatedBefore);
        
            console.log("Updated state after removal:", updatedBefore,before);
