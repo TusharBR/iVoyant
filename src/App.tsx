@@ -7,9 +7,7 @@ import Rightside from './assets/compoenets/Rightside'
 
 function App() {
   const {before} = useContext(Cartcontext);
-  const totalamt=before.reduce((a,b)=>{
-    return a+Number(b.productPrice)
-  },0)
+  const totalamt=before.reduce((a,b)=>a+Number(b.productPrice),0)
   return (
     <>
       <div className='leftright'>
