@@ -14,7 +14,7 @@ function App() {
         <Leftside/>
         <Rightside/>
       </div>
-      <footer style={{padding:"10px",textAlign:"center",backgroundColor:"lightblue",color:"red",fontSize:"3   0px"}}>Items added in cart are : {before.length} - Total amount : {totalamt.toFixed(2)}Rs</footer>
+      <footer style={{padding:"10px",textAlign:"center",backgroundColor:"lightblue",color:"red",fontSize:"30px"}}>Items added in cart are : {before.length} - Total amount : {totalamt.toFixed(2)}Rs</footer>
     </>
   )
 }
