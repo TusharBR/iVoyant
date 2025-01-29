@@ -7,7 +7,7 @@ const Rightside=()=>
         console.log(before.length)
         const removeitems = (val:number) => {
                     const updatedBefore = before.filter((ele,ci) => ci !== val);
-           after(updatedBefore);
+                                                 after(updatedBefore);
        
            console.log("Updated state after removal:", updatedBefore,before);
 
@@ -22,7 +22,7 @@ const Rightside=()=>
                     return(
                         <div key={ele.productId} className="productcard" >
           <h3>{ele.productName}</h3>
-          <p>Price: ${ele.productPrice.toFixed(2)}</p>
+          <p>Price:Rs.{ele.productPrice.toFixed(2)}</p>
           <button onClick={() => removeitems(ci)}>Remove item</button>
         
         </div>

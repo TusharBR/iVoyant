@@ -21,7 +21,7 @@ const Leftside=()=>
 {products.map((product) => (
         <div key={product.productId} className="productcard" >
           <h3>{product.productName}</h3>
-          <p>Price: ${product.productPrice.toFixed(2)}</p>
+          <p>Price:Rs.{product.productPrice.toFixed(2)}</p>
           <button onClick={() => additems(product.productId,product.productName,product.productPrice)}>Add item</button>
         </div>
       ))}

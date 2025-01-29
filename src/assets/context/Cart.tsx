@@ -1,6 +1,9 @@
 import {createContext, ReactNode, useState} from 'react'
 
 interface apitype{"products": objtype[]}
+type childrenprop={
+  children:ReactNode
+}
 interface objtype{
   "productId": string,
   "productName":string,
@@ -19,7 +22,7 @@ const Cartcontext=createContext<valuetype>({"products": [
             "productName":"string",
             "productPrice":0
           }],after:()=>{}})
-const Cart=(props:{children:ReactNode})=>{
+const Cart=({children}:childrenprop)=>{
     const api:apitype={
         "products": [
           {
@@ -82,7 +85,7 @@ const Cart=(props:{children:ReactNode})=>{
     return(
      
         <Cartcontext.Provider value={{products: api.products,before,after}}>
-            {props.children}
+            {children}
         </Cartcontext.Provider>
     )
 }
