@@ -27,8 +27,8 @@ function App() {
               afterclk(false);
              lightstyle({color:"white",backgroundColor:"grey",padding:"5px",border:"2px solid white"});
             break;
-              
-      
+
+
         }
 
     }
