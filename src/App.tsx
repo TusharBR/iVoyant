@@ -50,7 +50,7 @@ const IPTracker: React.FC = () => {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       }).addTo(mapRef.current);
     } else {
-      mapRef.current.setView([lat, lng], 10);
+      mapRef.current.setView([lat, lng], 12);
     }
 
     if (markerRef.current) {
@@ -83,7 +83,7 @@ const IPTracker: React.FC = () => {
       {locationData && (
         <p style={{fontSize:"60px"}}>
           <strong>IP:</strong> {locationData.ip} | <strong>Location:</strong>{" "}
-          {locationData.location.city}, {locationData.location.country} | <strong>ISP:</strong>{" "}
+          {locationData.location.city}, {locationData.location.country}, {locationData.location.region} | <strong>ISP:</strong>{" "}
           {locationData.isp}
         </p>
       )}
