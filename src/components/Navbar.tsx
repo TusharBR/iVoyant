@@ -13,7 +13,7 @@ const Navbar=({mytogglefunc}:toggleinterface)=> {
         <li>Home</li>
         <li>About</li>
        <li>Contact us</li>
-      <li > <button style={{padding:0,margin:0,fontSize:"x-large",cursor:"default"}} disabled={beforesmt.length>0?false:true} onClick={mytogglefunc}>&#128276;<sup > {beforesmt.length}</sup></button></li>
+      <li > <button style={{padding:0,margin:0,fontSize:"115%",cursor:"default"}} disabled={beforesmt.length>0?false:true} onClick={mytogglefunc}>&#128276;<sup > {beforesmt.length}</sup></button></li>
         </ol></nav>
   )
 }

@@ -1,3 +1,7 @@
+*
+{
+  font-size:115%;
+}
 input{
   cursor: default;
 }
@@ -9,7 +13,7 @@ h3
 .rightside div,.leftside1
 {
   
-  height:68vh;margin: 10px;
+  height:80vh;margin: 10px;
 
 }
 .rightside div
