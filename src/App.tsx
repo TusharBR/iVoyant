@@ -1,36 +1,39 @@
-import { useState,useEffect} from 'react'
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
+import Library from "./components/Library";
+import Cse from "./components/Cse";
+import Ise from "./components/Ise";
+import Login from "./components/Login";
 
-import './App.css'
-type props={
-  initial:number
-}
-function App({initial}:props) {
-  const [count, setCount] = useState(initial)
-
-
-  useEffect(()=>
+const App=() => {
+  const [permisson, setpermisson] = useState<boolean>(false)
+  function checking(pass:boolean)
   {
-    console.log('component did mount');
-    setTimeout(()=>{
-      setCount(count+1)
-    },1000)
-    return ()=>
-    {
-      console.log('component will unmount',count)
-    }
-  },[count])
-
-
-
-
+    setpermisson(pass)
+  }
   return (
-    <>
-   
-      <h1>Counter app - {count}</h1>
-    
-      <button >Click me</button>       
-    </>
-  )
-}
 
-export default App
+    <Router>
+      <Routes>
+      <Route  path="/"  element={<Login checking={checking}/>} />
+        <Route path="/home" element={permisson ? <Home /> : <Navigate to="/" />} />
+        <Route path="/about" element={permisson ? <About /> : <Navigate to="/" />} />
+        <Route path="/library" element={permisson ? <Library /> : <Navigate to="/" />}/>
+        
+          <Route path="/cse" element={permisson ? <Cse /> : <Navigate to="/" />}/>
+          <Route path="/ise"element={permisson ? <Ise /> : <Navigate to="/" />} />
+          <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
+
+
+
+
+
+

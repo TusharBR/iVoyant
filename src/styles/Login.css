@@ -1,0 +1,12 @@
+.logincontainer
+{
+     display: flex;
+  
+    align-items: center;
+    font-size: 60px;
+    flex-direction: column;
+}
+input,button{
+    margin: 10px;
+    font-size: 60px;
+}
