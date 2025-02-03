@@ -1,16 +1,16 @@
 
 import "../styles/Library.css";
 import { Link} from "react-router-dom";
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 
 const Library = () => {
   return (
     <>
-    <Navbar/>
+   
     <div className="library-container">
       <header className="library-header">
         <h1>Welcome to Our College Library</h1>
-        <p style={{fontSize:"x-large", textDecoration:"underline"}}><Link to="/cse">COMPUTER SCIENCE</Link> | <Link to="/ise">INFORMATION SCIENCE.</Link></p>
+        <p style={{fontSize:"x-large", textDecoration:"underline"}}><Link to="/library/cse">COMPUTER SCIENCE</Link> | <Link to="/library/ise">INFORMATION SCIENCE.</Link></p>
       </header>
       
       <section className="library-section">

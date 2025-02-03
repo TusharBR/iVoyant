@@ -1,11 +1,11 @@
 
 import "../styles/About.css";
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 
 const About = () => {
   return (
     <>
-    <Navbar/>
+  
     <div className="about-container">
       <header className="about-header">
         <h1>About Our College</h1>

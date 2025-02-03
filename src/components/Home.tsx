@@ -1,10 +1,10 @@
 
 import "../styles/Home.css";
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 
 const Home= () => {
   return (
-    <><Navbar />
+    <>
     <div className="home-container">
       <header className="home-header">
         <h1>Welcome to Our College</h1>

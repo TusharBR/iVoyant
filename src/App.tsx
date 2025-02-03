@@ -6,6 +6,7 @@ import Library from "./components/Library";
 import Cse from "./components/Cse";
 import Ise from "./components/Ise";
 import Login from "./components/Login";
+import Navbar from "./components/Navbar";
 
 const App=() => {
   const [permisson, setpermisson] = useState<boolean>(false)
@@ -18,13 +19,16 @@ const App=() => {
     <Router>
       <Routes>
       <Route  path="/"  element={<Login checking={checking}/>} />
-        <Route path="/home" element={permisson ? <Home /> : <Navigate to="/" />} />
+      <Route  path="/"  element={<Navbar/>} >
+      <Route path="/home" element={permisson ? <Home /> : <Navigate to="/" />} />
         <Route path="/about" element={permisson ? <About /> : <Navigate to="/" />} />
         <Route path="/library" element={permisson ? <Library /> : <Navigate to="/" />}/>
         
-          <Route path="/cse" element={permisson ? <Cse /> : <Navigate to="/" />}/>
-          <Route path="/ise"element={permisson ? <Ise /> : <Navigate to="/" />} />
+          <Route path="/library/cse" element={permisson ? <Cse /> : <Navigate to="/" />}/>
+          <Route path="/library/ise"element={permisson ? <Ise /> : <Navigate to="/" />} />
           <Route path="*" element={<Navigate to="/" />} />
+      </Route>
+        
       </Routes>
     </Router>
   );

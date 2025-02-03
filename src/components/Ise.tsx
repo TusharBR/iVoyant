@@ -1,13 +1,14 @@
-import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 const Ise = () => {
   return (
    <>
-   <Navbar/>
    <div className="home-container">
       <header className="home-header">
         <h1>Welcome ISE Books</h1>
+        
         <p>Shaping the new technology for the technological world.</p>
+        <Link to="/library"><h2>Back to library</h2></Link>
       </header>
       
       <section className="home-section">
