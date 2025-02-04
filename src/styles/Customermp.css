@@ -1,0 +1,29 @@
+h2{
+    background-color: yellow;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+h1{
+    text-align: center;
+}
+h1 {
+display: flex;
+justify-content: space-between;
+}
+.ls
+{
+    
+width:70%;
+border:5px solid blue;
+}
+.rs
+{
+    
+width:30%;
+border:5px solid rgb(255, 0, 195);
+}
+.bs
+{
+    display: flex;
+}
