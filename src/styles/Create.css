@@ -1,0 +1,26 @@
+.logincontainer
+{
+     display: inline-flex;
+  background-color: rgba(19, 148, 240, 0.638);
+    align-items: center;
+   justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 40px;
+}
+.maincontainers
+{
+     display:flex;
+  justify-content: center;
+  align-items: center;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/b/bd/Emmanuel_College_Front_Court%2C_Cambridge%2C_UK_-_Diliff.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+input,button{
+    font-size: 30px;
+    height:50px;
+    width: 100%;
+    border:4px solid black;   
+}

@@ -1,0 +1,22 @@
+.mynav
+{
+    display: flex;
+    background-color: rgb(41, 111, 242);
+    font-size: 30px;
+    padding:15px;
+    list-style: none;
+
+}
+.lefts
+{
+    width: 70%;
+}
+span{
+    width: 30%;
+    display: flex;
+    
+    justify-content: space-around
+}
+a{
+    color: black;
+}
