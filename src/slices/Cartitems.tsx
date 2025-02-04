@@ -1,4 +1,4 @@
-import { createSlice} from "@reduxjs/toolkit";
+import { createSlice, nanoid} from "@reduxjs/toolkit";
 
 
 export const Cartitems=createSlice({
@@ -8,7 +8,7 @@ export const Cartitems=createSlice({
     reducers:{
         addcartitems: (state, action) => { 
             console.log("additems",action.payload)          
-            state.cartitems = [...state.cartitems, {...action.payload}]; 
+            state.cartitems = [...state.cartitems, {...action.payload,id:nanoid()}]; 
             console.log(state.cartitems, "arr");
           },
           deletecartitems:(state,action)=>{

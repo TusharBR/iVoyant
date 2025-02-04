@@ -8,7 +8,7 @@ export const Adminitems=createSlice({
     reducers:{
         additems: (state, action) => { 
             console.log("additems",action.payload)          
-            state.items = [...state.items, {...action.payload}]; 
+            state.items = [...state.items, {...action.payload,id:nanoid()}]; 
             console.log(state.items, "arr");
           },
           deleteitems:(state,action)=>{
