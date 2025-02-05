@@ -52,7 +52,7 @@ const Login= () => {
     <>
   <div className="maincontainers">
   <div className="logincontainer">
-        <h4 style={{margin:0}}>Student Login</h4>
+        <h4 style={{margin:0}}>Customer Login</h4>
         <div  >
           <label>Username:</label>
           <input name="username"
@@ -78,7 +78,7 @@ const Login= () => {
   </div>
   <div>
   <div className="logincontainer">
-        <h4 style={{margin:0}}>Create user</h4>
+        <h4 style={{margin:0}}>Create Customer</h4>
         <div  >
           <label>Username:</label>
           <input name="username"

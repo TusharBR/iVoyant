@@ -5,7 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 import {createuser} from "../slices/loginpage"
 import { useNavigate } from "react-router-dom";
 
-
+interface statetype
+{
+  credentials:{
+    users: {
+      find(arg0: (user: { username: string; password: string; isadmin: string; }) => boolean): unknown;username: string; password: string; isadmin: string;
+};username: string; password: string; isadmin: string;
+}
+  
+}
 
 
 const Login= () => {
@@ -29,7 +37,7 @@ const Login= () => {
   // const [Authenticated, setAuthenticated] = useState<boolean>(false);
 
 
- const users=useSelector((state)=>state.credentials.users);
+ const users=useSelector((state:statetype)=>state.credentials.users);
  const navg=useNavigate()
 
   const handleLogin = () => {
@@ -37,7 +45,7 @@ const Login= () => {
 
     // // Check users array to handle navigation
     const foundUser = users.find(
-      (user) => user.username === coit.username && user.password === coit.password && user.isadmin==="true"
+      (user: { username: string; password: string; isadmin: string; }) => user.username === coit.username && user.password === coit.password && user.isadmin==="true"
     );
     if (foundUser) {
       
@@ -52,7 +60,7 @@ const Login= () => {
     <>
   <div className="maincontainers">
   <div className="logincontainer">
-        <h4 style={{margin:0}}>Admin Login</h4>
+        <h4 style={{margin:0}}>Ivokart Admin Login</h4>
         <div  >
           <label>Username:</label>
           <input name="username"
@@ -78,7 +86,7 @@ const Login= () => {
   </div>
   <div>
   <div className="logincontainer">
-        <h4 style={{margin:0}}>Create Admin</h4>
+        <h4 style={{margin:0}}>Create Ivokart Admin</h4>
         <div  >
           <label>Username:</label>
           <input name="username"
