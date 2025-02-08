@@ -2,14 +2,28 @@
 
 import { createSlice, nanoid} from "@reduxjs/toolkit";
 
-
+interface cartitemstype
+{
+    category:string,
+    description:string,
+    id:string,
+    image:string,
+    price:number,
+    rating:{
+    rate:number,
+    count:number
+    },
+    title:string
+}
+const initialState: { cartitems: cartitemstype[] } = {
+    cartitems: [],
+  };
 export const Cartitems=createSlice({
     name:"Adminitems",
-    initialState:{cartitems :[]  
-    },
+    initialState,
     reducers:{
         addcartitems: (state, action) => { 
-            console.log("additems",action.payload)          
+                 
             state.cartitems = [...state.cartitems, {...action.payload,id:nanoid()}]; 
             console.log(state.cartitems, "arr");
           },
@@ -19,7 +33,6 @@ export const Cartitems=createSlice({
                   return ele.id!==action.payload
               })
               state.cartitems=freshusers
-              console.log(freshusers)
           }
     }
 })

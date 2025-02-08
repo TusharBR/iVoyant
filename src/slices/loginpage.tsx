@@ -1,11 +1,15 @@
 import { createSlice,nanoid} from "@reduxjs/toolkit";
 
-
+interface userstype
+{
+    id:number,username: string, name: string, mail: string, password: string, isadmin: string
+}
+const initialState: { users: userstype[] } = {
+    users: [],
+  };
 export const credentials=createSlice({
     name:"credentials",
-    initialState:{
-        users:[]
-    },
+    initialState,
     reducers:{
         createuser: (state, action) => { 
             console.log("createuser",action.payload)          

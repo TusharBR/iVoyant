@@ -2,12 +2,18 @@ import {  useDispatch, useSelector} from "react-redux";
 import "../styles/Adminmp.css"
 import {additems, deleteitems} from "../slices/Adminitems"
 import { useGetCartsQuery } from '../apis/Cartapi';
-
-
+import { RootState } from "../Store"; 
+interface itemstype
+{
+    category:string,   
+    price:number,
+    title:string,
+    id:string
+}
 const Adminmp = () => {
   
 //   const disp=useDispatch()
-  const itemsData=useSelector((state)=>state.Adminitems.items);
+  const itemsData=useSelector((state:RootState)=>state.Adminitems.items);
   const dispatch=useDispatch();
   const { data, error, isLoading } = useGetCartsQuery(undefined);
 console.log(data)
@@ -19,7 +25,7 @@ console.log(data)
   return (
 <>
 <div>sasstill not available to user
-    {allProducts?.map((ele, ci) => {
+    {allProducts?.map((ele:itemstype, ci:number) => {
       return (
         <h2 key={ci}>
           <span>
@@ -35,7 +41,7 @@ console.log(data)
   </div>
 
     <div>to user
-  {itemsData?.map((ele, ci) => {
+  {itemsData?.map((ele:itemstype, ci:number) => {
     return (
       <h2 key={ci}>
         <span>

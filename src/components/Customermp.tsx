@@ -2,13 +2,14 @@
 import {  useDispatch, useSelector} from "react-redux";
 import "../styles/Customermp.css"
 import {addcartitems, deletecartitems} from "../slices/Cartitems"
+import { RootState } from "../Store"
 
 
 const Customermp = () => {
 //   const disp=useDispatch()
-  const itemsData=useSelector((state)=>state.Adminitems.items);
+  const itemsData=useSelector((state:RootState)=>state.Adminitems.items);
   console.log(itemsData)
-  const cartdata=useSelector((state)=>state.Cartitems.cartitems);
+  const cartdata=useSelector((state:RootState)=>state.Cartitems.cartitems);
   const dispatch=useDispatch();
   const tprice=cartdata.reduce((a,b)=>a+(b.price),0);
   const gst=tprice+((18*tprice)/100);
@@ -16,7 +17,7 @@ const Customermp = () => {
 <>
  <div className="bs">
  <div className="ls"><h1>Ivokart items</h1>
-    {itemsData?.map((ele, ci:number) => {
+    {itemsData?.map((ele, ci) => {
       return (
         <h2 key={ci}>
           <span>
@@ -32,7 +33,7 @@ const Customermp = () => {
   </div>
 
     <div className="rs"><h1><span>Cart</span><span>Total:Rs {gst.toFixed(2)}(18% GST included)</span></h1>
-  {cartdata?.map((ele, ci:number) => {
+  {cartdata?.map((ele, ci) => {
     return (
       <h2 key={ci}>
         <span>

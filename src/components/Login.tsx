@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 // import { useSelector} from "react-redux";
 import {createuser} from "../slices/loginpage"
 import { useNavigate } from "react-router-dom";
-
+import { RootState } from "../Store";
 
 
 
@@ -29,7 +29,7 @@ const Login= () => {
   // const [Authenticated, setAuthenticated] = useState<boolean>(false);
 
 
- const users=useSelector((state)=>state.credentials.users);
+ const users=useSelector((state:RootState)=>state.credentials.users);
  const navg=useNavigate()
 
   const handleLogin = () => {

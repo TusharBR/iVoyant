@@ -1,23 +1,38 @@
 import { createSlice,nanoid} from "@reduxjs/toolkit";
 
 
+interface itemstype
+{
+    category:string,
+    description:string,
+    id:string,
+    image:string,
+    price:number,
+    rating:{
+    rate:number,
+    count:number
+    },
+    title:string
+}
+const initialState: { items: itemstype[] } = {
+    items: [],
+  };
 export const Adminitems=createSlice({
     name:"Adminitems",
-    initialState:{items :[] 
-    },
+    initialState,
     reducers:{
         additems: (state, action) => { 
-            console.log("additems",action.payload)          
+               
             state.items = [...state.items, {...action.payload,id:nanoid()}]; 
-            console.log(state.items, "arr");
+            console.log(state.items, "arr","length",state.items[0]);
           },
           deleteitems:(state,action)=>{
-              console.log("deleteitems",action.payload)
+              //.log("deleteitems",action.payload)
               const freshusers=state.items.filter((ele)=>{
                   return ele.id!==action.payload
               })
               state.items=freshusers
-              console.log(freshusers)
+            //  console.log(freshusers)
           }
     }
 })

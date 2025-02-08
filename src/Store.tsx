@@ -9,5 +9,6 @@ const universalstore=configureStore({
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware().concat(cartApi.middleware),
   });
-
+  export type RootState = ReturnType<typeof universalstore.getState>;
+  export type AppDispatch = typeof universalstore.dispatch;
 export default universalstore
