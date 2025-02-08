@@ -16,7 +16,6 @@ const Adminmp = () => {
   const itemsData=useSelector((state:RootState)=>state.Adminitems.items);
   const dispatch=useDispatch();
   const { data, error, isLoading } = useGetCartsQuery(undefined);
-console.log(data)
   if (isLoading) return <h2>Loading...</h2>;
   if (error) return <h2>Error fetching data</h2>;
 

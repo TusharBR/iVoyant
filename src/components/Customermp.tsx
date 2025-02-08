@@ -8,7 +8,6 @@ import { RootState } from "../Store"
 const Customermp = () => {
 //   const disp=useDispatch()
   const itemsData=useSelector((state:RootState)=>state.Adminitems.items);
-  console.log(itemsData)
   const cartdata=useSelector((state:RootState)=>state.Cartitems.cartitems);
   const dispatch=useDispatch();
   const tprice=cartdata.reduce((a,b)=>a+(b.price),0);

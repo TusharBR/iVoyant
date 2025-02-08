@@ -24,15 +24,12 @@ export const Adminitems=createSlice({
         additems: (state, action) => { 
                
             state.items = [...state.items, {...action.payload,id:nanoid()}]; 
-            console.log(state.items, "arr","length",state.items[0]);
           },
           deleteitems:(state,action)=>{
-              //.log("deleteitems",action.payload)
               const freshusers=state.items.filter((ele)=>{
                   return ele.id!==action.payload
               })
               state.items=freshusers
-            //  console.log(freshusers)
           }
     }
 })

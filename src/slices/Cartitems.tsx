@@ -22,13 +22,10 @@ export const Cartitems=createSlice({
     name:"Adminitems",
     initialState,
     reducers:{
-        addcartitems: (state, action) => { 
-                 
+        addcartitems: (state, action) => {      
             state.cartitems = [...state.cartitems, {...action.payload,id:nanoid()}]; 
-            console.log(state.cartitems, "arr");
           },
           deletecartitems:(state,action)=>{
-              console.log("deleteitems",action.payload)
               const freshusers=state.cartitems.filter((ele)=>{
                   return ele.id!==action.payload
               })

@@ -26,16 +26,11 @@ const Login= () => {
     dispatch(createuser(oit))
     nit({ username: "",name:"", mail: "",password:"" ,isadmin:"false"})
    }
-  // const [Authenticated, setAuthenticated] = useState<boolean>(false);
-
-
- const users=useSelector((state:RootState)=>state.credentials.users);
+  const users=useSelector((state:RootState)=>state.credentials.users);
  const navg=useNavigate()
 
   const handleLogin = () => {
    
-
-    // // Check users array to handle navigation
     const foundUser = users.find(
       (user) => user.username === coit.username && user.password === coit.password && user.isadmin==="false"
     );

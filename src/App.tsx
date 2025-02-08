@@ -16,8 +16,6 @@ function App() {
       <Route  path="/admin"  element={<Adminlogin/>} />
       <Route  path="/Customermp"  element={<Customermp/>} />
       <Route  path="/Adminmp"  element={<Adminmp/>} />
-     {/*  <Route  path="/main"  element={<Main/>} />
-      <Route  path="/createhod"  element={<Createhod/>} /> */}
           <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
