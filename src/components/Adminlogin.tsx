@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 // import { useSelector} from "react-redux";
 import {createuser} from "../slices/loginpage"
 import { useNavigate } from "react-router-dom";
+import Logininput from "./Logininput";
 
 interface statetype
 {
@@ -19,27 +20,22 @@ interface statetype
 const Login= () => {
    const dispatch= useDispatch()
    const [oit,nit]=useState({ username: "",name:"", adminid: "",password:"",isadmin:"true"});
-   const [coit,cnit]=useState({ username: "",password:"" });
-
+   const [,cnit]=useState({ username: "",password:"" });
    const handleChange = (e: React.ChangeEvent<HTMLInputElement>)   => {
-     nit({ ...oit, [e.target.name]: e.target.value });
-   };
-   const chandleChange = (e: React.ChangeEvent<HTMLInputElement>)   => {
-     cnit({ ...coit, [e.target.name]: e.target.value });
-   };
-
-
+    nit({ ...oit, [e.target.name]: e.target.value });
+  };
    function createcustomer()
    {
     dispatch(createuser(oit))
     nit({ username: "",name:"", adminid: "",password:"" ,isadmin:"true"})
-   } const users=useSelector((state:statetype)=>state.credentials.users);
+   }
+   const users=useSelector((state:statetype)=>state.credentials.users);
  const navg=useNavigate()
 
-  const handleLogin = () => {
+  const handleLogin = (uname:string,pword:string) => {
    
     const foundUser = users.find(
-      (user: { username: string; password: string; isadmin: string; }) => user.username === coit.username && user.password === coit.password && user.isadmin==="true"
+      (user: { username: string; password: string; isadmin: string; }) => user.username === uname && user.password === pword && user.isadmin==="true"
     );
     if (foundUser) {
       
@@ -53,31 +49,7 @@ const Login= () => {
   return (
     <>
   <div className="maincontainers">
-  <div className="logincontainer">
-        <h4 style={{margin:0}}>Ivokart Admin Login</h4>
-        <div  >
-          <label>Username:</label>
-          <input name="username"
-            type="text" 
-            onChange={chandleChange} value={coit.username}
-            required 
-          />
-        </div>
-
-        <div>
-          <label>Password:</label>
-          <input name="password"
-            type="password" 
-            onChange={chandleChange} value={coit.password}
-            required 
-          />
-        </div>
-
-        <button style={{width:"20%",marginTop:"10px"}} onClick={()=>{handleLogin()}} disabled={!(coit.username.trim()!=="" && coit.password.trim()!=="")} >Login</button>
-
- 
-      
-  </div>
+    <Logininput handleLogin={handleLogin} />
   <div>
   <div className="logincontainer">
         <h4 style={{margin:0}}>Create Ivokart Admin</h4>
