@@ -6,7 +6,7 @@ const Leftside=()=>
 {
     const { products,before, after } = useContext(Cartcontext);
 
-    const additems = (...val) => {
+    const additems = (...val:[string,string,number]) => {
         const [a,b,c]=val;
         after([...before,{
             "productId": a,
