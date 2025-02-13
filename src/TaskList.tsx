@@ -4,19 +4,34 @@ import Task from "./Task";
 const ItemType = {
   TASK: "task",
 };
+interface abctype
+{
+  title:string,
+  tasks:{ id: number; text: string; status: string; }[],
+  setTasks:React.Dispatch<React.SetStateAction<{
+    id:number,
+    text:string,
+    status:string,
+  }[]>>,
+  status:string
+}
+  const TaskList = ({ title, tasks, setTasks, status }:abctype) => {
+    const [{ isOver }, drop] = useDrop(() => ({
+      accept: ItemType.TASK,
+      drop: (item :{id:number}) => moveTask(item.id),
+      collect: (monitor) => ({
+        isOver: !!monitor.isOver(),
+      }),
+      
+    }));
 
-const TaskList = ({ title, tasks, setTasks, status }) => {
-  const [{ isOver }, drop] = useDrop(() => ({
-    accept: ItemType.TASK,
-    drop: (item) => moveTask(item.id),
-    collect: (monitor) => ({
-      isOver: !!monitor.isOver(),
-    }),
-  }));
-
-  const moveTask = (taskId: any) => {
-    setTasks((prevTasks: any[]) =>
-      prevTasks.map((task: { id: any; }) =>
+  const moveTask = (taskId:number) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task:{
+        id:number,
+        text:string,
+        status:string,
+      } ) =>
         task.id === taskId ? { ...task, status } : task
       )
     );
@@ -29,12 +44,11 @@ const TaskList = ({ title, tasks, setTasks, status }) => {
         width: "200px",
         minHeight: "250px",
         padding: "10px",
-        border: "2px dashed gray",
-        backgroundColor: isOver ? "lightgreen" : "white",
+        border: "2px solid blue",
       }}
     >
       <h3>{title}</h3>
-      {tasks.filter((task: { status: any; }) => task.status === status).map((task: unknown) => (
+      {tasks.filter((task: { status:string}) => task.status === status).map((task: unknown) => (
         <Task key={task.id} task={task} />
       ))}
     </div>
