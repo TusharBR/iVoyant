@@ -1,4 +1,3 @@
-
 import React from 'react';
 import LeftContainer from '../organisms/LeftContainer';
 import MainContainer from '../organisms/MainContainer';
