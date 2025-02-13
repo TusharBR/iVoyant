@@ -1,13 +1,30 @@
-
 import React from 'react';
+import { useDrag } from 'react-dnd';
 
 interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
+  id: string; 
 }
 
-const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
-  return <button onClick={onClick} className="btn">{children}</button>;
+const Button: React.FC<ButtonProps> = ({ children, onClick, id }) => {
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: 'BUTTON', 
+    item: { id, type: 'BUTTON' },  
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
+  }));
+
+  return (
+    <button 
+      ref={drag}
+      style={{display:"inline",width:"100px"}}
+      className={`btn ${isDragging ? 'dragging' : ''}`}
+      onClick={onClick} >
+      {children}
+    </button>
+  );
 };
 
 export default Button;
