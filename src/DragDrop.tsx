@@ -2,7 +2,7 @@ import { useState } from "react";
 import Picture from "./Picture";
 import { useDrop } from "react-dnd";
 
-// Define an interface for Picture
+
 interface PictureType {
   id: number;
   url: string;
@@ -38,12 +38,10 @@ const PictureList: PictureType[] = [
 function DragDrop() {
   const [board, setBoard] = useState<PictureType[]>([]);
 
-  const[{ isOver }, drop] = useDrop<{ id: number }, void, { isOver: boolean }>(() => ({
+  const[ drop] = useDrop<{ id: number }, void, { isOver: boolean }>(() => ({
     accept: "image",
     drop: (item) => addImageToBoard(item.id),
-    collect: (monitor) => ({
-      isOver: !!monitor.isOver(),
-    }),
+  
   }));
 
   const addImageToBoard = (id: number) => {
