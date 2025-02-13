@@ -38,7 +38,7 @@ const PictureList: PictureType[] = [
 function DragDrop() {
   const [board, setBoard] = useState<PictureType[]>([]);
 
-  const[ drop] = useDrop<{ id: number }, void, { isOver: boolean }>(() => ({
+  const[ { isover },drop] = useDrop<{ id: number }, void, { isover: boolean }>(() => ({
     accept: "image",
     drop: (item) => addImageToBoard(item.id),
   
