@@ -1,46 +1,62 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../../Centerpage.css";
 import { useDrop } from "react-dnd";
 import Button from "../atoms/Button";
+import { createUniqueRandomGenerator } from "../../components/atoms/Random";
+import { nanoid } from "nanoid";
+const getUniqueNumber = createUniqueRandomGenerator(0, 100); 
+const App = () => {
+  const [droppedbuttons, setDroppedbuttons] = useState<{ ki: string; val: string }[]>([]);
 
-const App=() => {
-      const [droppedbuttons, setDroppedbuttons] = useState<any[]>([]);
-    
-      // header Drop zone
-      const [{ isOver }, drop] = useDrop(() => ({
-        accept: ['BUTTON'],
-        drop: (item: { id: string; type: string }) => {
-            setDroppedbuttons((prev) => [...prev, item]);
-        },
-        collect: (monitor) => ({
-          isOver: monitor.isOver(),
-        }),
-      }));
+  useEffect(() => {
+    console.log(droppedbuttons);
+  }, [droppedbuttons]);
+
+  // Function to delete a button by ID
+  function deletebtn(id: string) {
+    console.log("double clicked, id is - ", id);
+    setDroppedbuttons(droppedbuttons.filter((item) => item.ki !== id));
+  }
+
+  // Drop Zone for Buttons
+  const [{ isOver }, drop] = useDrop(() => ({
+    accept: ["BUTTON"],
+    drop: () => {
+      setDroppedbuttons((prev) => {
+        const btnno=getUniqueNumber();
+        const newId = nanoid(); // Generate unique ID
+        return [...prev, { ki: newId, val: `Button ${btnno}` }];
+      });
+    },
+    collect: (monitor) => ({
+      isOver: monitor.isOver(),
+    }),
+  }));
+
   return (
     <div className="container">
       <div className="content">
-        <h1 style={{margin:"0 0 20px 0"}}>This page was built with Puck</h1>
+        <h1 style={{ margin: "0 0 20px 0" }}>This page was built with Puck</h1>
         <p>
           Puck is the self-hosted visual editor for React. Bring your own
           components and make site changes instantly, without a deploy.
         </p>
-        <div className="buttons" ref={drop} >
+        <div className="buttons" ref={drop}>
           <button className="github">Visit GitHub</button>
           <button className="edit">Edit this page</button>
-          {droppedbuttons.map((item, index) =>
-            <Button key={index} id={item.id}>
-            {`Button ${index + 1}`}
-          </Button>
-
-        )}
+          {droppedbuttons.map((item) => (
+            <Button key={item.ki} id={item.ki} content={item.val} deletebtn={deletebtn} />
+          ))}
         </div>
       </div>
       <div className="image-container">
-        <img src="https://images.pexels.com/photos/1188083/pexels-photo-1188083.png?cs=srgb&dl=sea-dawn-nature-1188083.jpg&fm=jpg" alt="Aerial View" />
+        <img
+          src="https://images.pexels.com/photos/1188083/pexels-photo-1188083.png?cs=srgb&dl=sea-dawn-nature-1188083.jpg&fm=jpg"
+          alt="Aerial View"
+        />
       </div>
     </div>
   );
 };
 
 export default App;
-

@@ -1,10 +1,9 @@
 import React, { useState, useCallback } from "react";
-import { useDrag } from "react-dnd";
 
 interface ButtonProps {
-  children: string;
-  onClick?: () => void;
+  deletebtn: (id:string) => void;
   id: string;
+  content:string;
 }
 
 interface EditableFieldProps {
@@ -14,7 +13,7 @@ interface EditableFieldProps {
   style?: React.CSSProperties;
 }
 
-const EditableField: React.FC<EditableFieldProps> = ({ text, onUpdate, className, style }) => {
+const EditableField: React.FC<EditableFieldProps> = ({ text, onUpdate, className }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [inputValue, setInputValue] = useState(text);
 
@@ -69,20 +68,11 @@ const EditableField: React.FC<EditableFieldProps> = ({ text, onUpdate, className
   );
 };
 
-const Button = ({ children, id }: ButtonProps) => {
-  const [{ isDragging }, drag] = useDrag(() => ({
-    type: "BUTTON",
-    item: { id, type: "BUTTON" },
-    collect: (monitor) => ({
-      isDragging: monitor.isDragging(),
-    }),
-  }));
-
-  const [buttonText, setButtonText] = useState(children);
+const Button = ({ id,deletebtn,content}: ButtonProps) => {
+    const [buttonText, setButtonText] = useState(content);
 
   return (
     <button
-      ref={drag}
       style={{
         backgroundColor:" #007bff",
         color: "white",
@@ -93,10 +83,10 @@ const Button = ({ children, id }: ButtonProps) => {
         cursor: "pointer",
         fontSize: "14px",
       }}
-      className={`btn ${isDragging ? "dragging" : ""}`}
-
+      
+onDoubleClick={()=>deletebtn(id)}
     >
-      <EditableField text={buttonText} onUpdate={setButtonText} />
+      <EditableField text={buttonText} onUpdate={setButtonText}/>
     </button>
   );
 };

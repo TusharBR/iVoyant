@@ -1,5 +1,4 @@
 import React, { useState, useCallback } from "react";
-import { useDrag } from "react-dnd";
 
 interface FooterProps {
   content: string;
@@ -13,7 +12,7 @@ interface EditableFieldProps {
   style?: React.CSSProperties;
 }
 
-const EditableField: React.FC<EditableFieldProps> = ({ text, onUpdate, className, style }) => {
+const EditableField: React.FC<EditableFieldProps> = ({ text, onUpdate, className }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [inputValue, setInputValue] = useState(text);
 
@@ -61,20 +60,14 @@ const EditableField: React.FC<EditableFieldProps> = ({ text, onUpdate, className
       }}
     />
   ) : (
-    <p className={className} onClick={handleClick} style={style}>
+    <p className={className} onClick={handleClick} >
       {text}
     </p>
   );
 };
 
-const Footer = ({ content, id }: FooterProps) => {
-  const [{ isDragging }, drag] = useDrag(() => ({
-    type: "FOOTER",
-    item: { id, type: "FOOTER" },
-    collect: (monitor) => ({
-      isDragging: monitor.isDragging(),
-    }),
-  }));
+const Footer = ({ content }: FooterProps) => {
+  
 
   const [footerContent, setFooterContent] = useState(content);
 
@@ -86,12 +79,10 @@ const Footer = ({ content, id }: FooterProps) => {
   });
 
   return (
-    <div
-      ref={drag}
-      className={`footer ${isDragging ? "dragging" : ""}`}
+    <div className="footer"
       style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}
     >
-      <EditableField text={footerContent} style={{color:"white"}} onUpdate={setFooterContent} className="footer-content" />
+      <EditableField text={footerContent} onUpdate={setFooterContent} className="footer-content" />
 
       <span>&copy; &nbsp; All rights reserved.</span>
       <span>{currentDate}</span>

@@ -1,25 +1,45 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDrop } from 'react-dnd';
-import  NewsLetter from '../organisms/NewsLetter'
 import Header from '../atoms/Header';
 import Footer from '../atoms/Footer';
 import Card from '../molecules/Card';
 import Nav from '../organisms/Nav';
 import Centerpage from './Centerpage';
 import Newsletter from '../organisms/NewsLetter';
+import { createUniqueRandomGenerator } from "../../components/atoms/Random";
+import { nanoid } from "nanoid";
+
+const getUniqueNumber = createUniqueRandomGenerator(0, 100); 
 
 const MainContainer= () => {
   const [droppedHeaders, setDroppedHeaders] = useState<any[]>([]);
   const [droppedButtonsAndCards, setDroppedButtonsAndCards] = useState<any[]>([]);
   const [droppedFooters, setDroppedFooters] = useState<any[]>([]);
 
+  useEffect(() => {
+    console.log(droppedHeaders,"headers")
+    console.log(droppedHeaders,"state")
+  
+    
+  }, [droppedHeaders])
+  
+
+  function deletebtn(id: string) {
+    console.log("double clicked, id is - ", id);
+    setDroppedHeaders(droppedHeaders.filter((item) => item.ki !== id));
+  }
+
   // header Drop zone
   const [{ isOverHeader }, headerDrop] = useDrop(() => ({
     accept: ['HEADER'],
-    drop: (item: { id: string; type: string }) => {
-      setDroppedHeaders((prev) => [...prev, item]);
+    drop: () => {
+      setDroppedHeaders((prev) => {
+        const btnno = getUniqueNumber()
+        const newId = nanoid(); 
+        return [...prev, { ki: newId, val: `Header ${btnno}` }];
+      });
     },
-    collect: (monitor) => ({
+    collect: (monitor) => ({  
       isOverHeader: monitor.isOver(),
     }),
   }));
@@ -52,7 +72,7 @@ const MainContainer= () => {
       <div className={`header-drop-zone ${isOverHeader ? 'over' : ''}`} ref={headerDrop}>
       <Nav></Nav>
         {droppedHeaders.map((item, index) => (
-          <Header key={index} title={`Header ${index + 1}`} id={item.id} />
+          <Header key={index} title={item.val} id={item.ki} deletebtn={deletebtn}/>
         ))}
       </div>
 

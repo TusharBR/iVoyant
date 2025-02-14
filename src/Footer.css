@@ -12,4 +12,7 @@
     border-top: 3px solid #2563eb;
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
-  
+  .footer-content
+  {
+    color:white;
+  }

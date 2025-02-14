@@ -7,9 +7,8 @@ const LeftContainer= () => {
       <DraggableButton label="Header" type="HEADER" />
       <DraggableButton label="Button" type="BUTTON" />
       <DraggableButton label="Card" type="CARD" />
-      <DraggableButton label="Footer" type="FOOTER" />
       <DraggableButton label="BANNER" type="BANNER"/>
-      
+      <DraggableButton label="Footer" type="FOOTER" />     
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import React, { useState, useCallback } from "react";
-import { useDrag } from "react-dnd";
 
 interface CardProps {
   title: string;
@@ -15,7 +14,7 @@ interface EditableFieldProps {
   style?: React.CSSProperties;
 }
 
-const EditableField: React.FC<EditableFieldProps> = ({ text, onUpdate, Element, className, style }) => {
+const EditableField: React.FC<EditableFieldProps> = ({ text, onUpdate, Element, className }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [inputValue, setInputValue] = useState(text);
 
@@ -85,26 +84,20 @@ const EditableField: React.FC<EditableFieldProps> = ({ text, onUpdate, Element, 
       />
     )
   ) : (
-    <Element className={className} onClick={handleClick} style={{ cursor: "pointer", ...style }}>
+    <Element className={className} onClick={handleClick} >
       {text}
     </Element>
   );
 };
 
-const Card = ({ title, content, id }: CardProps) => {
-  const [{ isDragging }, drag] = useDrag(() => ({
-    type: "CARD",
-    item: { id, type: "CARD" },
-    collect: (monitor) => ({
-      isDragging: monitor.isDragging(),
-    }),
-  }));
+const Card = ({ title, content }: CardProps) => {
+  
 
   const [newTitle, setNewTitle] = useState(title);
   const [newContent, setNewContent] = useState(content);
 
   return (
-    <div ref={drag} className={`card ${isDragging ? "dragging" : ""}`} >
+    <div className="card" >
       <div className="card-content">
         <EditableField text={newTitle} onUpdate={setNewTitle} Element="h2" className="card-title" style={{ fontSize: "20px", fontWeight: "bold" }} />
         <EditableField text={newContent} onUpdate={setNewContent} Element="span" className="card-category" style={{ fontSize: "13px", color: "#666" }} /> 
