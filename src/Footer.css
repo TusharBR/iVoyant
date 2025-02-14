@@ -1,6 +1,6 @@
 .footer {
     width: 100%;
-    height: 60px;
+    height: 50px;
     background: #1e293b;
     color: white;
     display: flex;
@@ -11,23 +11,5 @@
     font-family: 'Poppins', sans-serif;
     border-top: 3px solid #2563eb;
     transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-  
-  .footer.dragging {
-    opacity: 0.5;
-    transform: scale(1.05);
-  }
-  
-  .footer-content {
-    font-size: 14px;
-    font-weight: 500;
-  }
-  
-  .footer-info {
-    font-size: 12px;
-    margin-top: 5px;
-    opacity: 0.8;
-    display: flex;
-    gap: 15px;
   }
   

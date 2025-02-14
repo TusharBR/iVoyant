@@ -26,7 +26,6 @@
   margin-bottom: 20px;
   background-color: #fff; 
   border: 1px solid #ddd;
-  border-radius: 5px;
   cursor: grab;
   transition: all 0.3s ease;
 }
@@ -57,7 +56,6 @@
 }
 
 .header-drop-zone {
-  border:2px solid red;
   flex: 1 1 10%;
   padding: 10px;
   width: 100%;
@@ -65,16 +63,15 @@
 }
 
 .button-drop-zone {
-  border:2px solid rgb(21, 255, 0);
-  flex: 3 1 60%;
+  flex: 3 1 50%;
   padding: 10px;
   width: 100%;
   overflow: visible;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .footer-drop-zone {
-  border:2px solid rgb(0, 47, 255);
   flex: 1 1 10%;
   padding: 10px;
   width: 100%;

@@ -12,6 +12,7 @@ const App =() => {
   return (
     <DndProvider backend={HTML5Backend}>
 <Navbar/>
+
       <AppLayout />
     </DndProvider>
   );

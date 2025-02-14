@@ -2,7 +2,8 @@ import { useDrag } from 'react-dnd';
 
 const LeftContainer= () => {
   return (
-    <div className="left-container">
+    <div className="left-container" style={{display:"flex",alignItems:"center"}}>
+      <h3 style={{margin:"0 0 20px 0",textDecoration:"underline"}}>Components</h3><br />
       <DraggableButton label="Header" type="HEADER" />
       <DraggableButton label="Button" type="BUTTON" />
       <DraggableButton label="Card" type="CARD" />
@@ -27,14 +28,13 @@ const DraggableButton = ({ label, type }:{ label: string; type: string }) => {
       className={`btn ${isDragging ? 'dragging' : ''}`}
       style={{
         display: 'block',
-        width: '100%',
+        width: '60%',
         marginBottom: '10px',
         cursor: 'grab',
-        padding: '18px',
         backgroundColor: '#007bff',
         color: '#fff',
-        border: 'none',
-        borderRadius: '5px',
+        border: '2px solid black',
+        borderRadius: '2px',
         fontSize:"30px"
       }}
     >
