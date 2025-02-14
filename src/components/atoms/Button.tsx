@@ -7,7 +7,7 @@ interface ButtonProps {
   id: string; 
 }
 
-const Button: React.FC<ButtonProps> = ({ children, onClick, id }) => {
+const Button= ({ children, onClick, id }:ButtonProps) => {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: 'BUTTON', 
     item: { id, type: 'BUTTON' },  
@@ -19,7 +19,7 @@ const Button: React.FC<ButtonProps> = ({ children, onClick, id }) => {
   return (
     <button 
       ref={drag}
-      style={{display:"inline",width:"100px"}}
+      style={{display:"inline",width:"100px",height:"10%",margin:"10px"}}
       className={`btn ${isDragging ? 'dragging' : ''}`}
       onClick={onClick} >
       {children}

@@ -1,8 +1,7 @@
-import React from 'react';
 import LeftContainer from '../organisms/LeftContainer';
 import MainContainer from '../organisms/MainContainer';
 
-const AppLayout: React.FC = () => {
+const AppLayout = () => {
   return (
     <div className="app-layout">
       <LeftContainer />

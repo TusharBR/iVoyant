@@ -8,7 +8,7 @@
 .app-layout {
   display: flex;
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
 }
 
 .left-container {
@@ -31,13 +31,6 @@
   transition: all 0.3s ease;
 }
 
-.header:hover, .btn:hover, .footer:hover {
-  background-color: #e0e0e0; 
-}
-
-.card.dragging, .btn.dragging, .header.dragging, .footer.dragging {
-  opacity: 0.5;
-}
 
 .main-container {
   background-color: #ffffff;
@@ -65,7 +58,7 @@
 
 .header-drop-zone {
   border:2px solid red;
-  flex: 1 1 20%;
+  flex: 1 1 10%;
   padding: 10px;
   width: 100%;
   overflow: visible;
@@ -82,7 +75,7 @@
 
 .footer-drop-zone {
   border:2px solid rgb(0, 47, 255);
-  flex: 1 1 20%;
+  flex: 1 1 10%;
   padding: 10px;
   width: 100%;
   overflow: visible;

@@ -7,7 +7,7 @@ interface CardProps {
   id: string;
 }
 
-const Card: React.FC<CardProps> = ({ title, content, id }) => {
+const Card= ({ title, content, id }:CardProps) => {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: 'CARD',
     item: { id, type: 'CARD' },
@@ -17,11 +17,16 @@ const Card: React.FC<CardProps> = ({ title, content, id }) => {
   }));
 
   return (
-    <button ref={drag} className={`card ${isDragging ? 'dragging' : ''}`}>
-      <h2 >{title}</h2>
-      <p>{content}</p>
-      <span >Read more</span>
-    </button>
+    <div ref={drag} className={`card ${isDragging ? 'dragging' : ''}`} style={{display:"block"}}>
+    <div className="card-image"></div>
+    <div className="card-content">
+      <span className="card-category">{content}</span>
+      <h2 className="card-title">{title}</h2>
+      <p className="card-meta">
+        By <strong>Author</strong> new
+      </p>
+    </div>
+  </div>
   );
 };
 
