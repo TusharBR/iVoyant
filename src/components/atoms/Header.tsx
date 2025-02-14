@@ -15,7 +15,7 @@ interface EditableFieldProps {
   style?: React.CSSProperties;
 }
 
-const EditableField: React.FC<EditableFieldProps> = ({ text, onUpdate, Element, className, style }) => {
+const EditableField = ({ text, onUpdate, Element, className, style }:EditableFieldProps) => {
   const [isEditing, setIsEditing] = useState(false);
   const [inputValue, setInputValue] = useState(text);
 
@@ -59,7 +59,6 @@ const EditableField: React.FC<EditableFieldProps> = ({ text, onUpdate, Element, 
         fontFamily: "sans-serif",
         fontSize: "20px",
         fontWeight: "bold",
-        ...style,
       }}
     />
   ) : (
