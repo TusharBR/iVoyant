@@ -36,9 +36,9 @@ const App = () => {
   return (
     <div className="container">
       <div className="content">
-        <h1 style={{ margin: "0 0 20px 0" }}>This page was built with Puck</h1>
+        <h1 style={{ margin: "0 0 20px 0" }}>This page was built as a Editor</h1>
         <p>
-          Puck is the self-hosted visual editor for React. Bring your own
+          This is self-hosted visual editor for React. Bring your own
           components and make site changes instantly, without a deploy.
         </p>
         <div className="buttons" ref={drop}>

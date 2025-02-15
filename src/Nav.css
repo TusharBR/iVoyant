@@ -1,6 +1,6 @@
 
   .navbar1 {
-    background-color: #e4e7f0; /* Deep Blue */
+    background-color: #3b6bfd;
     padding: 10px 20px;margin: 0 0 20px 0;
     z-index: 100; width: 100%;
     box-shadow: 4px 10px 4px rgba(0, 0, 0, 0.2);
@@ -16,7 +16,7 @@
   
   .logo h1 {
     font-size: 24px;
-    color: rgb(84, 84, 150);
+    color: rgb(255, 255, 255);
   }
   
   .navbar1-links {
@@ -31,30 +31,10 @@
   
   .navbar1-links a {
     text-decoration: none;
-    color: rgb(84, 84, 150);
+    color: rgb(255, 255, 255);
     font-size: 18px;
     transition: color 0.3s ease, transform 0.3s ease;
   }
   
-  .navbar1-links a:hover ,
-  .logo h1:hover {
-    color: #60a5fa;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .navbar1-container {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .navbar1-links {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .navbar1-links a {
-      font-size: 20px;
-    }
-  }
+
   

@@ -4,7 +4,6 @@ const Navbar = () => {
      
       <div className="navbar-left">
         <span className="icon">☰</span>
-        <span className="icon">☰</span>
       </div>      
       <div className="navbar-center">
         <span className="title">Component Editor</span>

@@ -7,7 +7,7 @@ const LeftContainer= () => {
       <DraggableButton label="Header" type="HEADER" />
       <DraggableButton label="Button" type="BUTTON" />
       <DraggableButton label="Card" type="CARD" />
-      <DraggableButton label="BANNER" type="BANNER"/>
+      <DraggableButton label="Banner" type="BANNER"/>
       <DraggableButton label="Footer" type="FOOTER" />     
     </div>
   );
@@ -35,7 +35,7 @@ const DraggableButton = ({ label, type }:{ label: string; type: string }) => {
         color: '#fff',
         border: '2px solid black',
         borderRadius: '2px',
-        fontSize:"30px"
+        fontSize:"20px"
       }}
     >
       {label}
