@@ -20,26 +20,28 @@ const Customermp = () => {
       return (
         <h2 key={ci}>
           <span>
-            <span>{ci} )</span>{ele.title}
+            <span>{ci}:</span>{ele.title}
           </span>
           <span>Category: {ele.category}</span>
           <span>Price:Rs {ele.price}</span>
-           <span onClick={()=>{dispatch(addcartitems(ele))
-           }} style={{ border: "2px solid red" }}>Add</span>
+           <span className="spanbtn" onClick={()=>{dispatch(addcartitems(ele))
+           }} >Add</span>
         </h2>
       );
     })}
   </div>
 
-    <div className="rs"><h1><span>Cart</span><span>Total:Rs {gst.toFixed(2)}(18% GST included)</span></h1>
+    <div className="rs"><div className="mainspan">
+    <span style={{textDecoration:"underline"}}>Cart  : </span><span>Total:Rs {gst.toFixed(2)}(18% GST included)</span>
+    </div>
   {cartdata?.map((ele, ci) => {
     return (
       <h2 key={ci}>
         <span>
-          <span>{ci} )</span> Item Name: {ele.title}
+          <span>{ci}:</span> Item Name: {ele.title}
         </span>
         <span>Price: Rs {ele.price}</span>
-         <span onClick={() => { dispatch(deletecartitems(ele.id)) }} style={{ border: "2px solid red" }}>Delete</span>
+         <span className="spanbtn" onClick={() => { dispatch(deletecartitems(ele.id)) }} >Delete</span>
       </h2>
     );
   })}

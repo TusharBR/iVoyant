@@ -4,7 +4,7 @@ const Navbar= () => {
   return (
     <>
     <nav className="mynav">
-     <li className="lefts">Ivokart</li>
+     <li className="lefts" >Ivokart</li>
       <span>
       <Link to="/" className="option0">
         Customer</Link>

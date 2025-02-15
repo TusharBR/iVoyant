@@ -10,7 +10,7 @@ const Logininput = ({handleLogin}:inputprops) => {
       };
   return (
     <div className="logincontainer">
-    <h4 style={{margin:0}}>Customer Login</h4>
+    <h4 style={{margin:0}}>Login</h4>
     <div  >
       <label>Username:</label>
       <input name="username"
@@ -25,11 +25,20 @@ const Logininput = ({handleLogin}:inputprops) => {
       <input name="password"
         type="password" 
         onChange={chandleChange} value={coit.password}
-        required 
+        pattern="^[A-Z].{4}[A-Z]$"
+    title="Password must be 6 characters long, start & end with an uppercase letter."
+    style={{ borderColor: coit.password && !/^[A-Z].{4}[A-Z]$/.test(coit.password) ? "red" : "" }} 
       />
     </div>
-
-    <button style={{width:"20%",marginTop:"10px"}} onClick={()=>{handleLogin(coit.username,coit.password)}} disabled={!(coit.username.trim()!=="" && coit.password.trim()!=="")} >Login</button>   
+    <button
+  style={{ marginTop: "10px" }}
+  onClick={()=>{handleLogin(coit.username,coit.password)}}
+  disabled={!(coit.username.trim() !== "" &&
+    coit.password.trim() !== "" &&
+    /^[A-Z].{4}[A-Z]$/.test(coit.password))}
+>
+Login
+</button>
 </div>
   )
 }

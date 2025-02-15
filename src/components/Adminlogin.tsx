@@ -52,7 +52,7 @@ const Login= () => {
     <Logininput handleLogin={handleLogin} />
   <div>
   <div className="logincontainer">
-        <h4 style={{margin:0}}>Create Ivokart Admin</h4>
+        <h4 style={{margin:0}}>Create Ivokart Seller</h4>
         <div  >
           <label>Username:</label>
           <input name="username"
@@ -75,6 +75,9 @@ const Login= () => {
             type="text" 
             onChange={handleChange} value={oit.adminid}
             required 
+            pattern="^[A-Z]-\d{3}$"
+            title="Password must be 6 characters long, start & end with an uppercase letter."
+            style={{ borderColor: oit.password && !/^[A-Z]-\d{3}$/.test(oit.adminid) ? "red" : "" }}
           />
         </div>
 
@@ -84,11 +87,22 @@ const Login= () => {
             type="password" 
             onChange={handleChange} value={oit.password}
             required 
+            pattern="^[A-Z].{4}[A-Z]$"
+            title="Password must be 6 characters long, start & end with an uppercase letter."
+            style={{ borderColor: oit.password && !/^[A-Z].{4}[A-Z]$/.test(oit.password) ? "red" : "" }}
           />
         </div>
-
-        <button style={{width:"20%",marginTop:"10px"}} onClick={createcustomer}  disabled={!(oit.username.trim()!=="" && oit.password.trim()!=="")} >Create</button>
-        
+        <button
+  style={{marginTop: "10px" }}
+  onClick={createcustomer}
+  disabled={!(oit.username.trim() !== "" &&
+    oit.name.trim() !== "" &&
+    oit.adminid.trim() !== "" &&
+    oit.password.trim() !== "" &&
+    /^[A-Z].{4}[A-Z]$/.test(oit.password) && /^[A-Z]-\d{3}$/.test(oit.adminid))}
+>
+  Create Seller
+</button>
  
         </div>
   </div>

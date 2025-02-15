@@ -23,23 +23,25 @@ const Adminmp = () => {
 
   return (
 <>
-<div>sasstill not available to user
+<div>
+  <h1>Seller items</h1>
     {allProducts?.map((ele:itemstype, ci:number) => {
       return (
         <h2 key={ci}>
           <span>
-            <span>{ci} )</span> Item Name: {ele.title}
+            <span>{ci}:</span> Item Name: {ele.title}
           </span>
           <span>Category: {ele.category}</span>
           <span>Price:Rs {ele.price}</span>
-           <span onClick={()=>{dispatch(additems(ele))
-           }} style={{ border: "2px solid red" }}>Add</span>
+           <span className="edit-btn" onClick={()=>{dispatch(additems(ele))
+           }} >Add</span>
         </h2>
       );
     })}
   </div>
 
-    <div>to user
+    <div>
+      <h1>To customer</h1>
   {itemsData?.map((ele:itemstype, ci:number) => {
     return (
       <h2 key={ci}>
@@ -48,7 +50,7 @@ const Adminmp = () => {
         </span>
         <span>Category: {ele.category}</span>
         <span>Price: ${ele.price}</span>
-         <span onClick={() => { dispatch(deleteitems(ele.id)) }} style={{ border: "2px solid red" }}>Delete</span>
+         <span className="edit-btn" onClick={() => { dispatch(deleteitems(ele.id)) }} >Delete</span>
       </h2>
     );
   })}

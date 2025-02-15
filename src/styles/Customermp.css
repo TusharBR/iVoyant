@@ -5,12 +5,10 @@ h2{
     justify-content: space-evenly;
 }
 h1{
+    font-size: 30px;
     text-align: center;
 }
-h1 {
-display: flex;
-justify-content: center;
-}
+
 .ls
 {
     
@@ -21,9 +19,21 @@ border:5px solid blue;
 {
     
 width:30%;
-border:5px solid rgb(255, 0, 195);
+border:5px solid rgb(141, 141, 252);
 }
 .bs
 {
     display: flex;
+}
+.mainspan
+{
+    font-size: 30px;
+}
+.spanbtn
+{
+    
+    border:1px solid red;
+    padding:3px;
+    background-color:#74b9ff;
+    cursor: pointer;
 }
