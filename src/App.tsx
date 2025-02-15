@@ -1,17 +1,28 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-import imageSrc from "./52112.png"; 
+import imageSrc from "./52112.png";
 
+// Define the expected structure of location data
+type LocationData = {
+  ip: string;
+  location: {
+    city: string;
+    country: string;
+    region: string;
+    lat: number;
+    lng: number;
+  };
+  isp: string;
+};
 
-const API_KEY = "at_0XMo1zhkYG9JwXt78fDufCNqPOBZ1"; // Replace with a valid API key
-const DEFAULT_IP = "8.8.8.8"; // Google’s Public DNS IP
+const API_KEY = "at_BloBgyy8DPLGW82g0gQzB4P6l4hb5";
+const DEFAULT_IP = "8.8.8.8";
 
 const IPTracker: React.FC = () => {
-  const [ip, setIp] = useState(DEFAULT_IP);
-  const [locationData, setLocationData] = useState<any>(null);
+  const [ip, setIp] = useState<string>(DEFAULT_IP);
+  const [locationData, setLocationData] = useState<LocationData | null>(null);
   const mapRef = useRef<L.Map | null>(null);
   const markerRef = useRef<L.Marker | null>(null);
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
@@ -28,13 +39,13 @@ const IPTracker: React.FC = () => {
 
       if (!response.ok) throw new Error("API request failed");
 
-      const data = await response.json();
+      const data: LocationData = await response.json();
       if (!data.location) throw new Error("No location data found");
 
       setLocationData(data);
       updateMap(data.location.lat, data.location.lng);
-    } catch (error) {
-      console.error("Error fetching IP details:", error.message);
+    } catch (err) {
+      console.error("Error fetching IP details:", err);
     }
   };
 
@@ -47,7 +58,8 @@ const IPTracker: React.FC = () => {
       });
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       }).addTo(mapRef.current);
     } else {
       mapRef.current.setView([lat, lng], 12);
@@ -60,13 +72,11 @@ const IPTracker: React.FC = () => {
     markerRef.current = L.marker([lat, lng], {
       icon: L.icon({
         iconUrl: imageSrc,
-        iconSize: [100,100],
+        iconSize: [50, 50],
         iconAnchor: [19, 38],
         popupAnchor: [1, -34],
       }),
-    })
-      .addTo(mapRef.current)
-    
+    }).addTo(mapRef.current);
   };
 
   return (
@@ -77,21 +87,27 @@ const IPTracker: React.FC = () => {
         value={ip}
         onChange={(e) => setIp(e.target.value)}
         placeholder="Enter IP address"
-        style={{width:"80%",height:"40px",padding:0}}
+        style={{ width: "80%", height: "40px", padding: 0 }}
       />
-      <button onClick={() => fetchIPDetails(ip)} style={{width:"10%",height:"40px",padding:0}}>Search</button>
+      <button
+        onClick={() => fetchIPDetails(ip)}
+        style={{ width: "10%", height: "40px", padding: 0 }}
+      >
+        Search
+      </button>
       {locationData && (
-        <p style={{fontSize:"60px"}}>
-          <strong>IP:</strong> {locationData.ip} | <strong>Location:</strong>{" "}
-          {locationData.location.city}, {locationData.location.country}, {locationData.location.region} | <strong>ISP:</strong>{" "}
-          {locationData.isp}
+        <p style={{ fontSize: "large" }}>
+          <strong>IP:</strong> {locationData?.ip} | <strong>Location:</strong>{" "}
+          {locationData?.location?.city}, {locationData?.location?.country},{" "}
+          {locationData?.location?.region} | <strong>ISP:</strong>{" "}
+          {locationData?.isp}
         </p>
       )}
       <div
         ref={mapContainerRef}
         style={{
-          width: "1000px",
-          height: "1000px",
+          width: "600px",
+          height: "600px",
           margin: "20px auto",
           border: "1px solid black",
         }}
