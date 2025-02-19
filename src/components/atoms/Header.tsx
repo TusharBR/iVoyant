@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 interface HeaderProps {
   title: string;
   brief?: string;
   id: string;
-  deletebtn:(id:string)=>void
+  deletebtn1:(id:string)=>void
 }
 
-const Header = ({ title, brief = "A brief about this section",deletebtn,id }:HeaderProps) => {
-  useEffect(() => {
-    setNewTitle(title);
-    setNewbrief(brief);
-  }, [title, brief]);
+const Header = ({ title, brief = "A brief about this section",deletebtn1,id }:HeaderProps) => {
+
 
   const [isEditing, setIsEditing] = useState(false);
   const [isEditingbreif, setIsEditingbreif] = useState(false);
@@ -54,7 +51,7 @@ const Header = ({ title, brief = "A brief about this section",deletebtn,id }:Hea
   };
 console.log(title,id,"header")
   return (
-    <div className='header' onDoubleClick={()=>deletebtn(id)}>
+    <div className='header' onDoubleClick={()=>deletebtn1(id)}>
       {isEditing ? (
         <input
           type="text"

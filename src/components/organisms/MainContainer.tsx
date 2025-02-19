@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useDrop } from 'react-dnd';
 import Header from '../atoms/Header';
 import Footer from '../atoms/Footer';
@@ -16,28 +16,21 @@ const MainContainer= () => {
   const [droppedButtonsAndCards, setDroppedButtonsAndCards] = useState<any[]>([]);
   const [droppedFooters, setDroppedFooters] = useState<any[]>([]);
 
-  useEffect(() => {
-    console.log(droppedHeaders,"headers")
-    console.log(droppedHeaders,"state")
-  
-    
-  }, [droppedHeaders])
-  
+  console.log(droppedHeaders,"From maincontainer")
 
-  function deletebtn(id: string) {
+  function deletebtn1(id: string) {
     console.log("double clicked, id is - ", id);
     setDroppedHeaders(droppedHeaders.filter((item) => item.ki !== id));
+    // console.log("dh",droppedHeaders)
   }
 
   // header Drop zone
   const [{ isOverHeader }, headerDrop] = useDrop(() => ({
     accept: ['HEADER'],
     drop: () => {
-      setDroppedHeaders((prev) => {
-        const btnno = getUniqueNumber()
-        const newId = nanoid(); 
-        return [...prev, { ki: newId, val: `Header ${btnno}` }];
-      });
+      const btnno = getUniqueNumber()
+      const newId = nanoid(); 
+      setDroppedHeaders((prev) => [...prev, { ki: newId, val: `Header ${btnno}` }]);
     },
     collect: (monitor) => ({  
       isOverHeader: monitor.isOver(),
@@ -72,7 +65,7 @@ const MainContainer= () => {
       <div className={`header-drop-zone ${isOverHeader ? 'over' : ''}`} ref={headerDrop}>
       <Nav></Nav>
         {droppedHeaders.map((item, index) => (
-          <Header key={index} title={item.val} id={item.ki} deletebtn={deletebtn}/>
+          <Header key={item.ki} title={item.val} id={item.ki} deletebtn1={deletebtn1}/>
         ))}
       </div>
 

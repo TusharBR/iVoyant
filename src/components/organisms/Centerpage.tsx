@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import "../../Centerpage.css";
 import { useDrop } from "react-dnd";
 import Button from "../atoms/Button";
@@ -8,23 +8,21 @@ const getUniqueNumber = createUniqueRandomGenerator(0, 100);
 const App = () => {
   const [droppedbuttons, setDroppedbuttons] = useState<{ ki: string; val: string }[]>([]);
 
-  useEffect(() => {
-    console.log(droppedbuttons);
-  }, [droppedbuttons]);
 
   // Function to delete a button by ID
   function deletebtn(id: string) {
-    console.log("double clicked, id is - ", id);
-    setDroppedbuttons(droppedbuttons.filter((item) => item.ki !== id));
-  }
 
+    setDroppedbuttons(droppedbuttons.filter((item) => item.ki !== id));
+    console.log("button",droppedbuttons)
+  }
+console.log("button",droppedbuttons)
   // Drop Zone for Buttons
   const [{ isOver }, drop] = useDrop(() => ({
     accept: ["BUTTON"],
     drop: () => {
       setDroppedbuttons((prev) => {
         const btnno=getUniqueNumber();
-        const newId = nanoid(); // Generate unique ID
+        const newId = nanoid();
         return [...prev, { ki: newId, val: `Button ${btnno}` }];
       });
     },
