@@ -11,7 +11,7 @@ interface CardProps {
   bgColor?: string;
 }
 
-const Card: React.FC<CardProps> = ({ title, price, company, logo, color = "#000", size = "medium", bgColor = "#fff" }) => {
+const Card = ({ title, price, company, logo, color = "#000", size = "medium", bgColor = "#fff" }:CardProps) => {
   return (
     <div className={`maincard ${size}`} style={{ backgroundColor: bgColor, color }}>
       <p className="price-txt">{price}</p>
