@@ -1,2 +1,0 @@
-# iVoyant
-Intership
