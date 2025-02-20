@@ -3,6 +3,7 @@ import React, { useState, useCallback } from "react";
 interface FooterProps {
   content: string;
   id: string;
+  deletebtn2: (id1:string) => void; // Added delete function prop
 }
 
 interface EditableFieldProps {
@@ -56,21 +57,19 @@ const EditableField: React.FC<EditableFieldProps> = ({ text, onUpdate, className
         fontFamily: "sans-serif",
         fontSize: "14px",
         fontWeight: "bold",
-        outline:"groove",
+        outline: "groove",
       }}
     />
   ) : (
-    <p className={className} onClick={handleClick} >
+    <p className={className} onClick={handleClick}>
       {text}
     </p>
   );
 };
 
-const Footer = ({ content }: FooterProps) => {
-  
-
+const Footer = ({ content, id,deletebtn2  }: FooterProps) => {
   const [footerContent, setFooterContent] = useState(content);
-
+console.log("my id in footer is",id)
   const currentDate = new Date().toLocaleDateString("en-US", {
     weekday: "long",
     year: "numeric",
@@ -79,11 +78,12 @@ const Footer = ({ content }: FooterProps) => {
   });
 
   return (
-    <div className="footer"
-      style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}
+    <div
+      className="footer"
+      style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center", cursor: "pointer" }}
+      onDoubleClick={()=>{deletebtn2(id)}} 
     >
       <EditableField text={footerContent} onUpdate={setFooterContent} className="footer-content" />
-
       <span>&copy; &nbsp; All rights reserved.</span>
       <span>{currentDate}</span>
     </div>

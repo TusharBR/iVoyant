@@ -23,6 +23,16 @@ const MainContainer= () => {
     setDroppedHeaders(droppedHeaders.filter((item) => item.ki !== id));
     // console.log("dh",droppedHeaders)
   }
+  function deletebtn2(id: string) {
+    console.log("double clicked, id is footer - ", id);
+    setDroppedFooters(droppedFooters.filter((item) => item.ki !== id));
+    // console.log("dh",droppedHeaders)
+  }
+  function deletebtn3(id: string) {
+    console.log("double clicked, id is footer - ", id);
+    setDroppedButtonsAndCards(droppedButtonsAndCards.filter((item) => item.ki !== id));
+    // console.log("dh",droppedHeaders)
+  }
 
   // header Drop zone
   const [{ isOverHeader }, headerDrop] = useDrop(() => ({
@@ -41,7 +51,9 @@ const MainContainer= () => {
   const [{ isOverButtonsAndCards }, buttonsAndCardsDrop] = useDrop(() => ({
     accept: ['BANNER', 'CARD'],
     drop: (item: { id: string; type: string }) => {
-      setDroppedButtonsAndCards((prev) => [...prev, item]);
+      const btnno = getUniqueNumber()
+      const newId = nanoid(); 
+      setDroppedButtonsAndCards((prev) => [...prev,  { ki: newId, val: `${item.type} - ${btnno}`,type:item.type }]);
     },
     collect: (monitor) => ({
       isOverButtonsAndCards: monitor.isOver(),
@@ -51,8 +63,11 @@ const MainContainer= () => {
   // footer drop zone
   const [{ isOverFooter }, footerDrop] = useDrop(() => ({
     accept: ['FOOTER'],
-    drop: (item: { id: string; type: string }) => {
-      setDroppedFooters((prev) => [...prev, item]);
+    drop: () => {
+      const btnno = getUniqueNumber()
+      const newId = nanoid(); 
+      setDroppedFooters((prev) => [...prev, { ki: newId, val: `Footer ${btnno}` }]);
+      console.log("hii i am",droppedFooters)
     },
     collect: (monitor) => ({
       isOverFooter: monitor.isOver(),
@@ -64,7 +79,7 @@ const MainContainer= () => {
       
       <div className={`header-drop-zone ${isOverHeader ? 'over' : ''}`} ref={headerDrop}>
       <Nav></Nav>
-        {droppedHeaders.map((item, index) => (
+        {droppedHeaders.map((item) => (
           <Header key={item.ki} title={item.val} id={item.ki} deletebtn1={deletebtn1}/>
         ))}
       </div>
@@ -72,19 +87,19 @@ const MainContainer= () => {
       {/* Buttons and Cards Drop Zone */}
       <div className={`button-drop-zone ${isOverButtonsAndCards ? 'over' : ''}`} ref={buttonsAndCardsDrop} style={{display:"flex",justifyContent:"center"}}>
       <Centerpage />
-        {droppedButtonsAndCards.map((item, index) =>
+        {droppedButtonsAndCards.map((item) =>
           item.type === 'BANNER' ? (
-           <Newsletter  key={index} id={item.id} title={index + 1}/>
+           <Newsletter  key={item.ki} id={item.ki} title={item.val}  deletebtn3={deletebtn3}/>
           ) : (
-            <Card key={index} id={item.id} title={`Card ${index + 1}`} content="This is a card Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati itaque !"  />
+            <Card key={item.ki} id={item.ki} title={item.val} deletebtn3={deletebtn3} content="This is a card Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati itaque !"  />
           )
         )}
       </div>
 
       {/* Footer Drop Zone */}
       <div className={`footer-drop-zone ${isOverFooter ? 'over' : ''}`} ref={footerDrop}>
-        {droppedFooters.map((item, index) => (
-          <Footer key={index} content={`Footer ${index + 1}`} id={item.id} />
+        {droppedFooters.map((item) => (
+          <Footer key={item.ki} content={item.val} id={item.ki} deletebtn2={deletebtn2}/>
         ))}
         
       </div>

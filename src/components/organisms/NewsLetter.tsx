@@ -2,14 +2,15 @@ import "../../Newsletter.css";
 
 
 interface NewsLetterProps {
-    title: number;
+    title: string;
     id: string;
+    deletebtn3:(id:string)=>void;
   }
 
 
-const Newsletter= ({title,id}:NewsLetterProps) => {
+const Newsletter= ({title,id,deletebtn3}:NewsLetterProps) => {
   return (
-    <div className="newsletter-container">
+    <div className="newsletter-container" onDoubleClick={()=>deletebtn3(id)}>
       <div className="newsletter-content">
         <h2>Never miss new lessons. - {title}</h2>
       </div>
