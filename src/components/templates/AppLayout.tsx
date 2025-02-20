@@ -69,9 +69,9 @@ const MyForm = () => {
         </Form>
       </Content>
 
-      <Footer style={{ textAlign: "center", backgroundColor: "white", padding: "10px" ,display:"flex",justifyContent:"space-around",border:"2px solid #1677ff"}}>
-       <span> All righs reserved by Ivoyant</span>
-       <span> © 2025 My Form.</span>
+      <Footer style={{ backgroundColor: "white",padding:"5px" ,display:"flex",justifyContent:"center",border:"2px solid #1677ff",fontSize:"16px"}}>
+       <span >&copy;Copyrights 2025 &nbsp; &nbsp; </span>
+       <span> <img width={"110px"} src="https://cdn.prod.website-files.com/669c0714da1ae90bdf0d9b64/669c0ddc40b96ba8cd916a8e_Vectors-Wrapper.svg" alt="" /> </span>
       </Footer>
     </Layout>
   );
