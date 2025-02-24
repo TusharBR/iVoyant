@@ -1,10 +1,10 @@
-import Api from "./assets/Api"
+import Dualfilter from "./assets/Dualfilter"
 
 function App() {
 
   return (
     <>
-<Api/>
+<Dualfilter/>
     </>
   )
 }
