@@ -1,7 +1,6 @@
 import {  useState } from "react";
 import "../styles/Login.css"
 import { useDispatch, useSelector } from "react-redux";
-// import { useSelector} from "react-redux";
 import {createuser} from "../slices/loginpage"
 import { useNavigate } from "react-router-dom";
 import Logininput from "./Logininput";
@@ -76,7 +75,7 @@ const Login= () => {
             onChange={handleChange} value={oit.adminid}
             required 
             pattern="^[A-Z]-\d{3}$"
-            title="Password must be 6 characters long, start & end with an uppercase letter."
+            title="Sample: A-111"
             style={{ borderColor: oit.password && !/^[A-Z]-\d{3}$/.test(oit.adminid) ? "red" : "" }}
           />
         </div>

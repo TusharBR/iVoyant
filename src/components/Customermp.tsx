@@ -47,8 +47,6 @@ const Customermp = () => {
   })}
 </div>
 </div>
-
-
 </>
 
   )
