@@ -6,24 +6,30 @@ const items = [
   { id: 3, name: 'Carrot', category: 'Fruit', price: 0.75 },
   { id: 4, name: 'Doughnut', category: 'Bakery', price: 1.5 },
   { id: 5, name: 'Eggplant', category: 'Vegetable', price: 2.0 },
+  { id: 6, name: 'Puff', category: 'Bakery', price: 2.5 },
+  { id: 7, name: 'Beans', category: 'Vegetable', price: 1.8 },
+  { id: 8, name: 'Biscuit', category: 'Bakery', price: 1.02 },
 ];
 
 const SortableFilterableList = () => {
   const [categorystate, setcategorystate] = useState("All");
   const [sortstate, setsortstate] = useState("name");
-  const [filteredItems, setfilteredItems] = useState(items);
-
+  
+  const [filteredItems1, setfilteredItems1] = useState(items);
+  const [filteredItems, setfilteredItems] = useState(filteredItems1);
+  const [filteredItems2, setfilteredItems2] = useState(filteredItems1);
   useEffect(() => {
+    
     if (categorystate === "All") {
-      setfilteredItems(items);
+      setfilteredItems(filteredItems1);
     } else {
-      const filtered = items.filter((cv) => cv.category === categorystate);
-      setfilteredItems(filtered);
+      const filtered = filteredItems1.filter((cv) => cv.category === categorystate);
+      setfilteredItems2(filtered);
     }
   }, [categorystate]);
 
   useEffect(() => {
-    setfilteredItems((prevItems) => {
+    setfilteredItems1((prevItems) => {
       return [...prevItems].sort((a, b) => {
         if (sortstate === "price") {
           return a.price - b.price;
@@ -32,6 +38,14 @@ const SortableFilterableList = () => {
       });
     });
   }, [sortstate]);
+  
+  useEffect(() => {
+    setfilteredItems(filteredItems1)
+  }, [filteredItems1])
+  useEffect(() => {
+    setfilteredItems(filteredItems2)
+  }, [filteredItems2])
+  
 
   return (
     <div className="p-4">
