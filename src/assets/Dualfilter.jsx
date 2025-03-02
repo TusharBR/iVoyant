@@ -8,7 +8,7 @@ const items = [
   { id: 5, name: 'Eggplant', category: 'Vegetable', price: 2.0 },
   { id: 6, name: 'Puff', category: 'Bakery', price: 2.5 },
   { id: 7, name: 'Beans', category: 'Vegetable', price: 1.8 },
-  { id: 8, name: 'Biscuit', category: 'Bakery', price: 1.02 },
+  { id: 8, name: 'Biscuit', category: 'Bakery', price: 3.02 },
 ];
 
 const SortableFilterableList = () => {
@@ -60,6 +60,7 @@ const SortableFilterableList = () => {
 
       <div className="mb-4">
         <label className="mr-2">Filter by category:</label>
+        <input type="text" placeholder='ttt' />
         <select className="border p-1 rounded" onChange={(e) => setcategorystate(e.target.value)}>
           <option value="All">All</option>
           <option value="Fruit">Fruit</option>
