@@ -1,15 +1,24 @@
 import { useDrag } from 'react-dnd';
 
-const LeftContainer= () => {
+interface toggleInterface{
+  toggle:boolean;
+}
+
+const LeftContainer= ({toggle}:toggleInterface) => {
+
   return (
-    <div className="left-container" style={{display:"flex",alignItems:"center"}}>
-      <h3 style={{margin:"0 0 20px 0",textDecoration:"underline"}}>Components</h3><br />
-      <DraggableButton label="Header" type="HEADER" />
-      <DraggableButton label="Button" type="BUTTON" />
-      <DraggableButton label="Card" type="CARD" />
-      <DraggableButton label="Banner" type="BANNER"/>
-      <DraggableButton label="Footer" type="FOOTER" />     
-    </div>
+    <>
+      {toggle && (  // Change to `true` for testing or replace with a state variable
+        <div className="left-container" style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
+          <h3 style={{ margin: "0 0 20px 0", textDecoration: "underline" }}>Components</h3>
+          <DraggableButton label="Header" type="HEADER" />
+          <DraggableButton label="Button" type="BUTTON" />
+          <DraggableButton label="Card" type="CARD" />
+          <DraggableButton label="Banner" type="BANNER" />
+          <DraggableButton label="Footer" type="FOOTER" />
+        </div>
+      )}
+    </>
   );
 };
 

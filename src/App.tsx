@@ -7,13 +7,19 @@ import './card.css';
 import './Footer.css';
 import './Header.css';
 import Navbar from './components/organisms/Navbar';
+import { useState } from 'react';
 
 const App =() => {
+  const [toggle,settoggle]=useState(true)
+  function handleToggle()
+  {
+    settoggle(!toggle)
+  }
   return (
     <DndProvider backend={HTML5Backend}>
-<Navbar/>
+<Navbar handleToggle={handleToggle}/>
 
-      <AppLayout />
+      <AppLayout toggle={toggle}/>
     </DndProvider>
   );
 };

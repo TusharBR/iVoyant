@@ -36,8 +36,9 @@ console.log("button",droppedbuttons)
       <div className="content">
         <h1 style={{ margin: "0 0 20px 0" }}>This page was built as a Editor</h1>
         <p>
-          This is self-hosted visual editor for React. Bring your own
-          components and make site changes instantly, without a deploy.
+        This page is built as an interactive editor, allowing seamless modifications.
+You can bring your own components and customize them in real time.
+Enjoy a flexible and efficient way to edit your React projects effortlessly.
         </p>
         <div className="buttons" ref={drop}>
           <button className="github">Visit GitHub</button>

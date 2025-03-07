@@ -12,7 +12,7 @@
 }
 
 .left-container {
-  width:20vw;
+  width:22vw;
   background-color: #f4f4f4; 
   padding: 20px;
   border-right: 2px solid #ccc;
@@ -40,7 +40,7 @@
   align-items: flex-start;
   flex-direction: column;
   overflow-y: auto;
-  width: 80vw; 
+  width:100%; 
 }
 
 .main-container.over {
