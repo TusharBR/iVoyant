@@ -10,7 +10,7 @@ export default function ChatApp() {
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior:"smooth" });
-  }, [messages]);
+  }, [messages]);x
 
   const sendMessage = () => {
     if (!input) return;
