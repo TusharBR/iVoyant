@@ -12,7 +12,10 @@
     gap: 10px;
    
   }
-  
+  .title
+  {
+    font-weight:500;
+  }
   .icon {
     font-size: 18px;
     cursor: pointer;

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDrop } from 'react-dnd';
 import Header from '../atoms/Header';
 import Footer from '../atoms/Footer';
@@ -11,27 +11,37 @@ import { nanoid } from "nanoid";
 
 const getUniqueNumber = createUniqueRandomGenerator(0, 100); 
 
-const MainContainer= () => {
+interface ResponsiveStateInterface {
+  resize: boolean,
+  size: string
+}
+
+interface MainContainerProps {
+  responsiveState: ResponsiveStateInterface;
+}
+
+
+const MainContainer= ({responsiveState}:MainContainerProps) => {
   const [droppedHeaders, setDroppedHeaders] = useState<any[]>([]);
   const [droppedButtonsAndCards, setDroppedButtonsAndCards] = useState<any[]>([]);
   const [droppedFooters, setDroppedFooters] = useState<any[]>([]);
+  const [isMobileView, setIsMobileView] = useState(responsiveState);
 
-  console.log(droppedHeaders,"From maincontainer")
-
+  // console.log(droppedHeaders,"From maincontainer")
+  useEffect(()=>{
+    setIsMobileView(responsiveState)
+  },[responsiveState])
   function deletebtn1(id: string) {
-    console.log("double clicked, id is - ", id);
+    // console.log("double clicked, id is - ", id);
     setDroppedHeaders(droppedHeaders.filter((item) => item.ki !== id));
-    // console.log("dh",droppedHeaders)
   }
   function deletebtn2(id: string) {
-    console.log("double clicked, id is footer - ", id);
+    // console.log("double clicked, id is footer - ", id);
     setDroppedFooters(droppedFooters.filter((item) => item.ki !== id));
-    // console.log("dh",droppedHeaders)
   }
   function deletebtn3(id: string) {
-    console.log("double clicked, id is footer - ", id);
+    // console.log("double clicked, id is footer - ", id);
     setDroppedButtonsAndCards(droppedButtonsAndCards.filter((item) => item.ki !== id));
-    // console.log("dh",droppedHeaders)
   }
 
   // header Drop zone
@@ -60,23 +70,23 @@ const MainContainer= () => {
     }),
   }));
 
-  // footer drop zone
   const [{ isOverFooter }, footerDrop] = useDrop(() => ({
     accept: ['FOOTER'],
     drop: () => {
       const btnno = getUniqueNumber()
       const newId = nanoid(); 
       setDroppedFooters((prev) => [...prev, { ki: newId, val: `Footer ${btnno}` }]);
-      console.log("hii i am",droppedFooters)
+      // console.log("hii i am",droppedFooters)
     },
     collect: (monitor) => ({
       isOverFooter: monitor.isOver(),
     }),
   }));
-
   return (
-    <div className="main-container">
-      
+    <div className="main-container"  style={{
+      maxWidth: isMobileView.resize ? isMobileView.size : "100%", 
+      margin: "0 auto",
+    }}>
       <div className={`header-drop-zone ${isOverHeader ? 'over' : ''}`} ref={headerDrop}>
       <Nav></Nav>
         {droppedHeaders.map((item) => (
@@ -84,9 +94,8 @@ const MainContainer= () => {
         ))}
       </div>
 
-      {/* Buttons and Cards Drop Zone */}
       <div className={`button-drop-zone ${isOverButtonsAndCards ? 'over' : ''}`} ref={buttonsAndCardsDrop} style={{display:"flex",justifyContent:"center"}}>
-      <Centerpage />
+      <Centerpage isMobileView={isMobileView.resize}/>
         {droppedButtonsAndCards.map((item) =>
           item.type === 'BANNER' ? (
            <Newsletter  key={item.ki} id={item.ki} title={item.val}  deletebtn3={deletebtn3}/>

@@ -20,7 +20,7 @@ const Navbar = ({handleToggle}:handleToggleInterface) => {
       </div> 
           
       <div className="navbar-center">
-        <span className="title">Component Editor</span>
+        <span className="title">Website Builder</span>
       </div>
       <div className="navbar-right" style={{margin:"0 20px 0 0"}}>
         <span className="nav-icon">←</span>

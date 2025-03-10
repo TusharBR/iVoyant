@@ -1,0 +1,40 @@
+select .typo{
+    width:100%;
+    padding: 40px;
+    background-color: aliceblue;
+    border: 2px solid black;
+}
+.buttonClass {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    cursor: grab;
+    background-color: #007bff;
+    color: #fff;
+    border: 2px solid black;
+    border-radius: 2px;
+    font-size: 20px;
+}
+
+.dropdown-header {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-bottom: 2px solid grey; 
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: space-between;
+}
+h3{
+    margin: 0 0 20px 0;
+    font-family: Verdana;
+    font-weight: lighter;
+    display: flex;
+    width:98%;
+    justify-content: space-between;
+    /* border: 2px solid red; */
+    
+}
+h3 span span{
+    margin: 0 5px 0 0;
+}

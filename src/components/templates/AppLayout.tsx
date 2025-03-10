@@ -1,15 +1,22 @@
 import LeftContainer from '../organisms/LeftContainer';
 import MainContainer from '../organisms/MainContainer';
 
-interface toggleInterface{
-  toggle:boolean;
+interface ResponsiveStateInterface {
+  resize: boolean;
+  size: string;
 }
 
-const AppLayout = ({toggle}:toggleInterface) => {
+interface AppLayoutProps {
+  toggle: boolean;
+  responsiveState: ResponsiveStateInterface;
+  handleSize: ({ resize, size }: ResponsiveStateInterface) => void;
+}
+
+const AppLayout =({ toggle, responsiveState, handleSize }:AppLayoutProps) => {
   return (
     <div className="app-layout">
-      <LeftContainer toggle={toggle}/>
-      <MainContainer />
+      <LeftContainer toggle={toggle} handleSize={handleSize} />
+      <MainContainer responsiveState={responsiveState} />
     </div>
   );
 };

@@ -1,9 +1,9 @@
 
   .navbar1 {
-    background-color: #3b6bfd;
+    background-color: #1e5aff;
     padding: 10px 20px;margin: 0 0 20px 0;
     z-index: 100; width: 100%;
-    box-shadow: 4px 10px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 6px 12px 4px rgba(0, 0, 0, 0.2);
     border: 1px solid black;
   }
   
@@ -35,6 +35,6 @@
     font-size: 18px;
     transition: color 0.3s ease, transform 0.3s ease;
   }
-  
-
-  
+  h1{
+    font-weight: 500;
+  }

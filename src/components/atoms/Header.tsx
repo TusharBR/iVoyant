@@ -62,7 +62,7 @@ console.log(title,id,"header")
           className="header-input"
           style={{ 
           backgroundColor:"#1e293b",color:"white",fontFamily:"sans-serif",fontSize:"20px",fontStyle:"bold"}}
-        />
+        />  
       ) : (
         <h1 className="header-title" onClick={handleTitleClick}>
           {newTitle}
