@@ -1,9 +1,10 @@
 .header {
     width: 100%;
     height: 50px;
-    background-color: #3d90fc;
+    background-color: #027bfc;
     color: white;
     font-family: 'Poppins', sans-serif;
+    
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -14,4 +15,8 @@
 .header-brief
 {
   color: white;
+}
+.header-title
+{
+  font-weight: lighter;
 }

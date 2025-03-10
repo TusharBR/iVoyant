@@ -64,9 +64,9 @@ console.log(title,id,"header")
           backgroundColor:"#1e293b",color:"white",fontFamily:"sans-serif",fontSize:"20px",fontStyle:"bold"}}
         />  
       ) : (
-        <h1 className="header-title" onClick={handleTitleClick}>
+        <h2 className="header-title" onClick={handleTitleClick}>
           {newTitle}
-        </h1>
+        </h2>
       )}
 
 {isEditingbreif ? (
