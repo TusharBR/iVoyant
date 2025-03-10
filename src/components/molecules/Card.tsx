@@ -54,8 +54,8 @@ const EditableField = ({ text, onUpdate, Element, className }:EditableFieldProps
         autoFocus
         className={className}
         style={{
-          backgroundColor: "#f5f5f5",
-          color: "#333",
+          backgroundColor: "rgb(39, 103, 232)",
+          color:"white",
           fontFamily: "sans-serif",
           fontSize: "15px",
           width: "100%",
@@ -73,12 +73,12 @@ const EditableField = ({ text, onUpdate, Element, className }:EditableFieldProps
         autoFocus
         className={className}
         style={{
-          backgroundColor: "#f5f5f5",
-          color: "#333",
+          backgroundColor: "rgb(39, 103, 232)",
+          color: "rgb(255, 255, 255);",
+          
           fontFamily: "sans-serif",
-          fontSize: "16px",
-          fontWeight: "bold",
-          border: "none",
+          fontSize: "18px",
+          border: "1px solid white",
           outline: "none",
           width: "100%",
         }}
@@ -103,7 +103,7 @@ const Card = ({ title, content,deletebtn3,id }: CardProps) => {
         <EditableField text={newTitle} onUpdate={setNewTitle} Element="h2" className="card-title" style={{ fontSize: "20px", fontWeight: "bold" }} />
         <EditableField text={newContent} onUpdate={setNewContent} Element="span" className="card-category" style={{ fontSize: "13px", color: "#666" }} /> 
         <p className="card-meta">
-          <button style={{ margin: "10px" }}>Read more...</button>
+          <button className="cardButton" style={{ margin: "8px" }}>Read more...</button>
         </p>
       </div>
     </div>

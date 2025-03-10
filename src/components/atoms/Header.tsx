@@ -61,7 +61,7 @@ console.log(title,id,"header")
           onKeyDown={handleTitleKeyDown}
           className="header-input"
           style={{ 
-          backgroundColor:"#1e293b",color:"white",fontFamily:"sans-serif",fontSize:"20px",fontStyle:"bold"}}
+          backgroundColor:"#027bfc",color:"white",fontFamily:"sans-serif",fontSize:"20px",fontStyle:"bold"}}
         />  
       ) : (
         <h2 className="header-title" onClick={handleTitleClick}>
@@ -78,7 +78,7 @@ console.log(title,id,"header")
           onKeyDown={handlebreifKeyDown}
           className="header-input"
           style={{ 
-          backgroundColor:"#1e293b",color:"white",fontFamily:"sans-serif",fontSize:"20px",fontStyle:"bold"}}
+            background:" #027bfc",color:"white",fontFamily:"sans-serif",fontSize:"20px",fontStyle:"bold"}}
         />
       ) : (
         

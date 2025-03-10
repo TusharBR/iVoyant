@@ -4,7 +4,7 @@
     background-color: #013db6;
     padding: 10px 20px;margin: 0 0 20px 0;
     z-index: 100; width: 100%;
-    box-shadow: 6px 12px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 6px 10px 5px rgba(6, 5, 5, 0.2);
     border: 1px solid black;
   }
   
@@ -16,7 +16,7 @@
   }
   
   .logo h1 {
-    font-size: 24px;
+    font-size: 22px;
     color: rgb(255, 255, 255);
   }
   
@@ -33,7 +33,7 @@
   .navbar1-links a {
     text-decoration: none;
     color: rgb(255, 255, 255);
-    font-size: 18px;
+    font-size: 17px;
     transition: color 0.3s ease, transform 0.3s ease;
   }
   h1{

@@ -52,12 +52,10 @@ const EditableField: React.FC<EditableFieldProps> = ({ text, onUpdate, className
       autoFocus
       className="footer-input"
       style={{
-        backgroundColor: "#1e293b",
+        backgroundColor: "#027bfc",
         color: "white",
         fontFamily: "sans-serif",
-        fontSize: "14px",
-        fontWeight: "bold",
-        outline: "groove",
+        fontSize: "16px",
       }}
     />
   ) : (
@@ -73,7 +71,7 @@ console.log("my id in footer is",id)
   const currentDate = new Date().toLocaleDateString("en-US", {
     weekday: "long",
     year: "numeric",
-    month: "long",
+    month: "numeric",
     day: "numeric",
   });
 
@@ -84,7 +82,7 @@ console.log("my id in footer is",id)
       onDoubleClick={()=>{deletebtn2(id)}} 
     >
       <EditableField text={footerContent} onUpdate={setFooterContent} className="footer-content" />
-      <span>&copy; &nbsp; All rights reserved.</span>
+      <span>&copy; &nbsp; All rights reserved</span>
       <span>{currentDate}</span>
     </div>
   );
