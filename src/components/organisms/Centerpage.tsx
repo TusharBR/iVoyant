@@ -4,6 +4,7 @@ import { useDrop } from "react-dnd";
 import Button from "../atoms/Button";
 import { createUniqueRandomGenerator } from "../../components/atoms/Random";
 import { nanoid } from "nanoid";
+import { CSSProperties } from "react";
 const getUniqueNumber = createUniqueRandomGenerator(0, 100); 
 
 interface isMobileViewInterface
@@ -37,10 +38,11 @@ const App = ({isMobileView}:isMobileViewInterface) => {
     }),
   }));
 
-  const desktopStyles = {
+
+  const desktopStyles: { [key: string]: CSSProperties } = {
     container: {
       display: "flex",
-      flexWrap: "no-wrap", // Fix: Removed the typo in 'no-wrap'
+      flexWrap: "nowrap", // Fix: Removed the typo in 'no-wrap'
       alignItems: "center",
       justifyContent: "center",
       width: "100%",
