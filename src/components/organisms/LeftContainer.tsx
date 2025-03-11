@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useDrag } from "react-dnd";
 import "../../Leftcontainer.css";
+import { DndContext } from "../Context/Dndcontext";
 
 const sections = [
   {
@@ -17,10 +18,7 @@ const sections = [
   },
 ];
 
-const LeftContainer = ({ toggle, handleSize }: { 
-  toggle: boolean; 
-  handleSize: (responsiveState: { resize: boolean; size: string }) => void;
-}) =>{
+const LeftContainer = () =>{
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>(
     Object.fromEntries(sections.map((section) => [section.title, true]))
   );
@@ -31,7 +29,13 @@ const LeftContainer = ({ toggle, handleSize }: {
       [title]: !prev[title],
     }));
   };
+  const context = useContext(DndContext);
 
+  if (!context) {
+    throw new Error("Navbar must be used within a DndProvider");
+  }
+
+  const { toggle,handleSize } = context;
 
   return (
     <>

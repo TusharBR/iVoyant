@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useDrop } from 'react-dnd';
 import Header from '../atoms/Header';
 import Footer from '../atoms/Footer';
@@ -8,20 +8,21 @@ import Centerpage from './Centerpage';
 import Newsletter from '../organisms/NewsLetter';
 import { createUniqueRandomGenerator } from "../../components/atoms/Random";
 import { nanoid } from "nanoid";
+import { DndContext } from '../Context/Dndcontext';
 
 const getUniqueNumber = createUniqueRandomGenerator(0, 100); 
 
-interface ResponsiveStateInterface {
-  resize: boolean,
-  size: string
-}
-
-interface MainContainerProps {
-  responsiveState: ResponsiveStateInterface;
-}
 
 
-const MainContainer= ({responsiveState}:MainContainerProps) => {
+const MainContainer= () => {
+  const context = useContext(DndContext);
+
+  if (!context) {
+    throw new Error("Navbar must be used within a DndProvider");
+  }
+
+  const { responsiveState } = context;
+
   const [droppedHeaders, setDroppedHeaders] = useState<any[]>([]);
   const [droppedButtonsAndCards, setDroppedButtonsAndCards] = useState<any[]>([]);
   const [droppedFooters, setDroppedFooters] = useState<any[]>([]);
