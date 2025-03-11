@@ -1,0 +1,64 @@
+.newsletter-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ebebeb;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 98%;
+  }
+  
+  .newsletter-content h2 {
+    font-size: 24px;
+    color: #000;
+    margin: 0 0 0 20px;
+  }
+  
+  .newsletter-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+  }
+  
+  .icon-circle {
+    width:65px;
+    height:65px;
+    background-color: rgb(192, 217, 237);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  
+  
+  .notification-badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #ff4081;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 5px;
+  }
+  
+  .newsletter-signup {
+    text-align: right;
+    margin: 0 20px 0 0;
+  }
+  
+  .newsletter-button {
+    background: none;
+    border: 2px solid #000000;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top:5px;
+  }
+  
+ 
+  
