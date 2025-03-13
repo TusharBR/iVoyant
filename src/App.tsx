@@ -1,25 +1,10 @@
-import './App.css'
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import Navbar from './components/Navbar';
-import Login from './components/Login';
-import Adminlogin from './components/Adminlogin';
-import Customermp from "./components/Customermp"
-import Adminmp from "./components/Adminmp"
-function App() {
+import Card from "./Card";
+
+const App = () => {
   return (
-    <>
-     <Router>
-       <Navbar/>
-      <Routes>
-       
-      <Route  path="/"  element={<Login />} />
-      <Route  path="/admin"  element={<Adminlogin/>} />
-      <Route  path="/Customermp"  element={<Customermp/>} />
-      <Route  path="/Adminmp"  element={<Adminmp/>} />
-          <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </Router>
-    </>
+    <div className="app">
+      <Card />
+    </div>
   )
 }
 
