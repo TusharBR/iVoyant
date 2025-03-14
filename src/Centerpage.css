@@ -1,9 +1,7 @@
-.buttons {
-  margin-top: 10px;
-}
+
 
 button {
-  padding: 10px 15px;
+  
   border: none;
   cursor: pointer;
   margin-right: 10px;
@@ -12,11 +10,13 @@ button {
 .github {
   background-color: #007bff;
   color: white;
+  padding: 10px 15px;
 }
 
 .edit {
   background-color: #f8f9fa;
   border: 1px solid #ccc;
+  padding: 10px 15px;
 }
  
 
