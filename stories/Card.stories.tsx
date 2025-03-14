@@ -45,7 +45,7 @@ export const SmallCardWithBlueBg = {
     title: "UI/UX Designer",
     price: "$90/hr",
     company: "Adobe",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Adobe_Corporate_logo.svg",
+    logo: "https://download.logo.wine/logo/Adobe_Inc./Adobe_Inc.-Logo.wine.png",
     color: "#fff",
     size: "small",
     bgColor: "#007BFF",
