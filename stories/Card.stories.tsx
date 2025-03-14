@@ -1,18 +1,22 @@
-import React from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import { fn } from '@storybook/test';
 import Card from "../components/Card";
 
 export default {
   title: "Components/Card",
   component: Card,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
   argTypes: {
     color: { control: "color" },
     bgColor: { control: "color" },
     size: { control: { type: "radio", options: ["small", "medium", "large"] } },
   },
-} as Meta<typeof Card>;
+  args: { onClick: fn() },
+};
 
-export const Default: StoryObj<typeof Card> = {
+export const Default = {
   args: {
     title: "Senior Backend Engineer",
     price: "$150/hr",
@@ -24,7 +28,7 @@ export const Default: StoryObj<typeof Card> = {
   },
 };
 
-export const LargeCard: StoryObj<typeof Card> = {
+export const LargeCard = {
   args: {
     title: "Frontend Developer",
     price: "$120/hr",
@@ -36,7 +40,7 @@ export const LargeCard: StoryObj<typeof Card> = {
   },
 };
 
-export const SmallCardWithBlueBg: StoryObj<typeof Card> = {
+export const SmallCardWithBlueBg = {
   args: {
     title: "UI/UX Designer",
     price: "$90/hr",
@@ -48,7 +52,7 @@ export const SmallCardWithBlueBg: StoryObj<typeof Card> = {
   },
 };
 
-export const CardWithoutLogo: StoryObj<typeof Card> = {
+export const CardWithoutLogo = {
   args: {
     title: "Full Stack Developer",
     price: "$100/hr",
@@ -59,4 +63,3 @@ export const CardWithoutLogo: StoryObj<typeof Card> = {
     bgColor: "#eee",
   },
 };
-    
