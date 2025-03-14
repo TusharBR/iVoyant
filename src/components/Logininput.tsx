@@ -27,9 +27,10 @@ const Logininput = ({handleLogin}:inputprops) => {
         onChange={chandleChange} value={coit.password}
         pattern="^[A-Z].{4}[A-Z]$"
     title="Password must be 6 characters long, start & end with an uppercase letter."
-    style={{ borderColor: coit.password && !/^[A-Z].{4}[A-Z]$/.test(coit.password) ? "red" : "" }} 
+    style={{ border: coit.password && !/^[A-Z].{4}[A-Z]$/.test(coit.password) ? "3px solid red" : "" }} 
       />
     </div>
+   {coit.password && !/^[A-Z].{4}[A-Z]$/.test(coit.password) &&  <span style={{fontSize:"15px",color:"red",textDecoration:"none",backgroundColor:"white",margin:"5px"}}>Password must be 6 characters, start & end with an uppercase.</span>}
     <button
   style={{ marginTop: "10px" }}
   onClick={()=>{handleLogin(coit.username,coit.password)}}

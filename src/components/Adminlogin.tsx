@@ -41,7 +41,7 @@ const Login= () => {
       cnit({username:"",password:""})
       navg("/Adminmp");
     } else {
-      alert("Invalid credentials in verifyy");
+      alert("Invalid credentials");
       cnit({username:"",password:""})
     }
   };
@@ -76,10 +76,11 @@ const Login= () => {
             required 
             pattern="^[A-Z]-\d{3}$"
             title="Sample: A-111"
-            style={{ borderColor: oit.password && !/^[A-Z]-\d{3}$/.test(oit.adminid) ? "red" : "" }}
+            style={{ border: oit.adminid && !/^[A-Z]-\d{3}$/.test(oit.adminid) ? "3px solid red" : "" }}
           />
         </div>
-
+        {oit.adminid && !/^[A-Z]-\d{3}$/.test(oit.adminid) &&  <span style={{fontSize:"15px",color:"red",textDecoration:"none",backgroundColor:"white",margin:"5px"}}>Sample: A-111</span>}
+ 
         <div>
           <label>Password:</label>
           <input name="password"
@@ -88,9 +89,10 @@ const Login= () => {
             required 
             pattern="^[A-Z].{4}[A-Z]$"
             title="Password must be 6 characters long, start & end with an uppercase letter."
-            style={{ borderColor: oit.password && !/^[A-Z].{4}[A-Z]$/.test(oit.password) ? "red" : "" }}
+            style={{ border: oit.password && !/^[A-Z].{4}[A-Z]$/.test(oit.password) ? "3px solid xx`x`red" : "" }}
           />
         </div>
+        {oit.password && !/^[A-Z].{4}[A-Z]$/.test(oit.password) &&  <span style={{fontSize:"15px",color:"red",textDecoration:"none",backgroundColor:"white",margin:"5px"}}>Password must be 6 characters, start & end with an uppercase.</span>}
         <button
   style={{marginTop: "10px" }}
   onClick={createcustomer}

@@ -49,7 +49,7 @@ const Adminmp = () => {
           <span>{ci} )</span> Item Name: {ele.title}
         </span>
         <span>Category: {ele.category}</span>
-        <span>Price: ${ele.price}</span>
+        <span>Price: Rs {ele.price}</span>
          <span className="edit-btn" onClick={() => { dispatch(deleteitems(ele.id)) }} >Delete</span>
       </h2>
     );
