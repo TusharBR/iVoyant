@@ -1,107 +1,22 @@
-import React, { useState, useCallback } from "react";
+import { useState } from "react";
+import EditableField from "./EditableField";
 
 interface CardProps {
   title: string;
   content: string;
   id: string;
-  deletebtn3:(id:string)=>void;
+  deletebtn3: (id: string) => void;
 }
 
-interface EditableFieldProps {
-  text: string;
-  onUpdate: (newText: string) => void;
-  Element: "h2" | "span";
-  className?: string;
-  style?: React.CSSProperties;
-}
-
-const EditableField = ({ text, onUpdate, Element, className }:EditableFieldProps) => {
-  const [isEditing, setIsEditing] = useState(false);
-  const [inputValue, setInputValue] = useState(text);
-
-  const handleClick = useCallback(() => {
-    setIsEditing(true);
-  }, []);
-
-  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setInputValue(e.target.value);
-  }, []);
-
-  const handleBlur = useCallback(() => {
-    if (inputValue.trim() !== "") {
-      onUpdate(inputValue);
-    }
-    setIsEditing(false);
-  }, [inputValue, onUpdate]);
-
-  const handleKeyDown = useCallback(
-    (e: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      if (e.key === "Enter" && inputValue.trim() !== "") {
-        onUpdate(inputValue);
-        setIsEditing(false);
-      }
-    },
-    [inputValue, onUpdate]
-  );
-
-  return isEditing ? (
-    className === "card-category" ? (
-      <textarea
-        value={inputValue}
-        onChange={handleChange}
-        onBlur={handleBlur}
-        onKeyDown={handleKeyDown}
-        autoFocus
-        className={className}
-        style={{
-          backgroundColor: "rgb(39, 103, 232)",
-          color:"white",
-          fontFamily: "sans-serif",
-          fontSize: "15px",
-          width: "100%",
-          minHeight: "90px",
-          resize: "vertical",
-        }}
-      />
-    ) : (
-      <input
-        type="text"
-        value={inputValue}
-        onChange={handleChange}
-        onBlur={handleBlur}
-        onKeyDown={handleKeyDown}
-        autoFocus
-        className={className}
-        style={{
-          backgroundColor: "rgb(39, 103, 232)",
-          color: "rgb(255, 255, 255);",
-          
-          fontFamily: "sans-serif",
-          fontSize: "18px",
-          border: "1px solid white",
-          outline: "none",
-          width: "100%",
-        }}
-      />
-    )
-  ) : (
-    <Element className={className} onClick={handleClick} >
-      {text}
-    </Element>
-  );
-};
-
-const Card = ({ title, content,deletebtn3,id }: CardProps) => {
-  
-
+const Card = ({ title, content, deletebtn3, id }: CardProps) => {
   const [newTitle, setNewTitle] = useState(title);
   const [newContent, setNewContent] = useState(content);
 
   return (
-    <div className="card" onDoubleClick={()=>deletebtn3(id)}>
+    <div className="card" onDoubleClick={() => deletebtn3(id)}>
       <div className="card-content">
-        <EditableField text={newTitle} onUpdate={setNewTitle} Element="h2" className="card-title" style={{ fontSize: "20px", fontWeight: "bold" }} />
-        <EditableField text={newContent} onUpdate={setNewContent} Element="span" className="card-category" style={{ fontSize: "13px", color: "#666" }} /> 
+        <EditableField text={newTitle} onUpdate={setNewTitle} Element="h2" className="card-title" />
+        <EditableField text={newContent} onUpdate={setNewContent} Element="span" className="card-category" />
         <p className="card-meta">
           <button className="cardButton" style={{ margin: "8px" }}>Read more...</button>
         </p>
