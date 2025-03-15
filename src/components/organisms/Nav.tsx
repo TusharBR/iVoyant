@@ -1,5 +1,5 @@
 
-import "../../Nav.css"
+import "./Nav.css"
 const Nav = () => {
   return (
     <nav className="navbar1">

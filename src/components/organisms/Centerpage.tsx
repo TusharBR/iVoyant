@@ -1,5 +1,5 @@
 import {  useState } from "react";
-import "../../Centerpage.css";
+import "./Centerpage.css";
 import { useDrop } from "react-dnd";
 import Button from "../atoms/Button";
 import { createUniqueRandomGenerator } from "../../components/atoms/Random";

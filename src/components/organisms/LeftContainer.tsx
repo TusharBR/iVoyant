@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useDrag } from "react-dnd";
-import "../../Leftcontainer.css";
+import "./Leftcontainer.css";
 import { DndContext } from "../Context/Dndcontext";
 
 const sections = [

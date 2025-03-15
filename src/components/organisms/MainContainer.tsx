@@ -5,7 +5,6 @@ import Footer from '../atoms/Footer';
 import Card from '../molecules/Card';
 import Nav from '../organisms/Nav';
 import Centerpage from './Centerpage';
-import Newsletter from '../organisms/NewsLetter';
 import { createUniqueRandomGenerator } from "../../components/atoms/Random";
 import { nanoid } from "nanoid";
 import { DndContext } from '../Context/Dndcontext';

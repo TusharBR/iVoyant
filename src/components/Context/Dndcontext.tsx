@@ -1,6 +1,5 @@
 import { createContext, ReactNode, useState } from "react";
 
-// Define the shape of the context
 interface DndContextType {
   toggle: boolean;
   handleToggle: () => void;
@@ -12,7 +11,6 @@ interface Props {
   children: ReactNode;
 }
 
-// Create Context with default values
 export const DndContext = createContext<DndContextType | undefined>(undefined);
 
 const DndProvider = ({ children }: Props) => {

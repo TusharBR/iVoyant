@@ -49,7 +49,6 @@ const Header = ({ title, brief = "A brief about this section",deletebtn1,id }:He
       setIsEditingbreif(false);
     }
   };
-console.log(title,id,"header")
   return (
     <div className='header' onDoubleClick={()=>deletebtn1(id)}>
       {isEditing ? (
