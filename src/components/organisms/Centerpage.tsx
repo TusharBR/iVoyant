@@ -16,7 +16,6 @@ const App = ({isMobileView}:isMobileViewInterface) => {
   const [droppedbuttons, setDroppedbuttons] = useState<{ ki: string; val: string }[]>([]);
 
 
-  // Function to delete a button by ID
   function deletebtn(id: string) {
 
     setDroppedbuttons(droppedbuttons.filter((item) => item.ki !== id));
@@ -42,11 +41,11 @@ const App = ({isMobileView}:isMobileViewInterface) => {
   const desktopStyles: { [key: string]: CSSProperties } = {
     container: {
       display: "flex",
-      flexWrap: "nowrap", // Fix: Removed the typo in 'no-wrap'
+      flexWrap: "nowrap", 
       alignItems: "center",
       justifyContent: "center",
       width: "100%",
-      gap: "20px", // Space between items
+      gap: "20px",
     },
   
     content: {

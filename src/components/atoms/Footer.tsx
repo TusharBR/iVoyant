@@ -3,7 +3,7 @@ import React, { useState, useCallback } from "react";
 interface FooterProps {
   content: string;
   id: string;
-  deletebtn2: (id1:string) => void; // Added delete function prop
+  deletebtn2: (id1:string) => void;
 }
 
 interface EditableFieldProps {
