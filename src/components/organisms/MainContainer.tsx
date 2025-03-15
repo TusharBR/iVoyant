@@ -98,7 +98,7 @@ const MainContainer= () => {
       <Centerpage isMobileView={isMobileView.resize}/>
         {droppedButtonsAndCards.map((item) =>
           item.type === 'BANNER' ? (
-           <Newsletter  key={item.ki} id={item.ki} title={item.val}  deletebtn3={deletebtn3}/>
+           <></>
           ) : (
             <Card key={item.ki} id={item.ki} title={item.val} deletebtn3={deletebtn3} content="This is a card Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati itaque !"  />
           )
