@@ -20,13 +20,15 @@ const Login= () => {
    const dispatch= useDispatch()
    const [oit,nit]=useState({ username: "",name:"", adminid: "",password:"",isadmin:"true"});
    const [,cnit]=useState({ username: "",password:"" });
+   const [loginToggle,setloginToggle]=useState(false)
    const handleChange = (e: React.ChangeEvent<HTMLInputElement>)   => {
     nit({ ...oit, [e.target.name]: e.target.value });
   };
    function createcustomer()
    {
     dispatch(createuser(oit))
-    nit({ username: "",name:"", adminid: "",password:"" ,isadmin:"true"})
+    nit({ username: "",name:"", adminid: "",password:"" ,isadmin:"true"});
+    setloginToggle(!loginToggle)
    }
    const users=useSelector((state:statetype)=>state.credentials.users);
  const navg=useNavigate()
@@ -48,9 +50,13 @@ const Login= () => {
   return (
     <>
   <div className="maincontainers">
+  {loginToggle &&(
+    <div>
     <Logininput handleLogin={handleLogin} />
+    <div onClick={()=>setloginToggle(!loginToggle)}  style={{textAlign:"center",marginLeft:"50px",textDecoration:"underline",marginTop:"5px",fontSize:"larger"}}>Don’t have an account? Create account</div>
+    </div>)}
   <div>
-  <div className="logincontainer">
+  {!loginToggle && <div className="logincontainer">
         <h4 style={{margin:0}}>Create Ivokart Seller</h4>
         <div  >
           <label>Username:</label>
@@ -105,7 +111,9 @@ const Login= () => {
   Create Seller
 </button>
  
-        </div>
+        </div>}
+        {!loginToggle && <div onClick={()=>setloginToggle(!loginToggle)} style={{textAlign:"center",display:"block",marginLeft:"50px",textDecoration:"underline",marginTop:"5px",fontSize:"larger"}}>Already have an account? Login</div>}
+        
   </div>
   </div>
  </>

@@ -44,9 +44,11 @@ const Login= () => {
   return (
     <>
   <div className="maincontainers" >
-  {loginToggle &&(<div>
+  {loginToggle &&(
+    <div>
     <Logininput handleLogin={handleLogin} />
-    <div onClick={()=>setloginToggle(!loginToggle)}  style={{textAlign:"center",marginLeft:"50px",textDecoration:"underline",marginTop:"5px",fontSize:"larger"}}>Don’t have an account? Create account</div></div>)}
+    <div onClick={()=>setloginToggle(!loginToggle)}  style={{textAlign:"center",marginLeft:"50px",textDecoration:"underline",marginTop:"5px",fontSize:"larger"}}>Don’t have an account? Create account</div>
+    </div>)}
   <div>
  {!loginToggle && <div className="logincontainer">
         <h4 style={{margin:0}}>Create Customer</h4>
