@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {createuser} from "../slices/loginpage"
 import { useNavigate } from "react-router-dom";
 import Logininput from "./Logininput";
+import Navbar from "./Navbar";
 
 interface statetype
 {
@@ -49,6 +50,7 @@ const Login= () => {
   };
   return (
     <>
+    <Navbar/>
   <div className="maincontainers">
   {loginToggle &&(
     <div>

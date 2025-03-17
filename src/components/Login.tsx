@@ -5,6 +5,7 @@ import { createuser } from "../slices/loginpage";
 import { useNavigate } from "react-router-dom";
 import { RootState } from "../Store";
 import Logininput from "./Logininput";
+import Navbar from "./Navbar";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -41,6 +42,7 @@ const Login = () => {
 
   return (
     <>
+    <Navbar/>
       <div className="maincontainers">
         {loginToggle ? (
           <div>

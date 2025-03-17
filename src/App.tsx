@@ -1,6 +1,5 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Adminlogin from './components/Adminlogin';
 import Customermp from "./components/Customermp"
@@ -9,7 +8,7 @@ function App() {
   return (
     <>
      <Router>
-       <Navbar/>
+       
       <Routes>
        
       <Route  path="/"  element={<Login />} />

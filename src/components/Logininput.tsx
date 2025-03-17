@@ -12,7 +12,8 @@ const Logininput = ({ handleLogin }: InputProps) => {
   };
 
   return (
-    <div className="logincontainer">
+<>
+<div className="logincontainer">
       <h4 style={{ margin: 0 }}>Login</h4>
       <div>
         <label>Username:</label>
@@ -44,6 +45,7 @@ const Logininput = ({ handleLogin }: InputProps) => {
         Login
       </button>
     </div>
+</>
   );
 };
 

@@ -22,24 +22,28 @@ h1 {
 }
 
 .ls {
-    width: 70%;
+    width: 100%;
+    height: 88vh;
     border: 5px solid var(--primary-color);
     background-color: var(--light-bg);
 }
 
 .rs {
-    width: 30%;
+    width: 100%;
+    height: 88vh;
     border: 5px solid var(--secondary-color);
     background-color: var(--light-bg);
 }
 
 .bs {
-    display: flex;
+    display: block;
 }
 
 .mainspan {
     font-size: 30px;
     color: var(--dark-text);
+    display: flex;
+    justify-content: space-between;
 }
 
 .spanbtn {
@@ -48,4 +52,65 @@ h1 {
     background-color: var(--secondary-color);
     cursor: pointer;
     color: var(--white);
+}
+.headerClass
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.notificationBadge {
+    position: absolute;
+    top: -8px;
+    right: -20px;
+    background: red;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0px 7px;
+    border-radius: 50%;
+  }
+  .icon-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--dark-text);
+    color: white;
+}
+
+ th, 
+ td {
+    border: 1px solid white;
+    padding: 10px;
+    text-align: left;
+}
+
+ th {
+    background-color: #1e3c72; /* A slightly darker shade for header */
+}
+
+td {
+    background-color: var(--dark-text);
+}
+
+.custom-table .action-btn {
+    border: 1px solid red;
+    padding: 5px;
+    background-color: #74b9ff;
+    cursor: pointer;
+    color: black;
+}
+
+.custom-table .action-btn:hover {
+    background-color: transparent;
+    color: white;
 }
