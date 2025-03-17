@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css"
-// import {   useSelector} from "react-redux";
-// import { RootState } from "../Store"
-// const cartdata=useSelector((state:RootState)=>state.Cartitems.cartitems);
 const Navigationbar= () => {
   return (
     <>

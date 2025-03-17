@@ -103,42 +103,37 @@ input {
     border: 2px solid red;
 }
 
-/* Error message space reserved */
 .error-message {
     font-size: 15px;
     color: red;
     text-decoration: none;
     background-color: white;
     margin: 5px;
-    min-height: 20px; /* Fixes shifting by reserving space */
+    min-height: 20px; 
     display: block;
-    visibility: hidden; /* Keeps space occupied */
+    visibility: hidden;
 }
 
-/* Show error message only when needed */
+
 .error-message.show {
     visibility: visible;
 }
 
-
-/* Prevent button resizing when disabled */
 button {
     background-color: var(--primary-color);
     color: var(--white);
     cursor: pointer;
     font-weight: bold;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    min-height: 45px; /* Prevents layout shift */
+    min-height: 45px; 
 }
 
-/* Disabled button styling */
 button:disabled {
     background-color: gray;
     cursor: not-allowed;
     opacity: 0.6;
 }
 
-/* Toggle link for switching login/signup */
 .toggle-link {
     text-align: center;
     display: block;
