@@ -56,8 +56,8 @@ const Login= () => {
     <div onClick={()=>setloginToggle(!loginToggle)}  style={{textAlign:"center",marginLeft:"50px",textDecoration:"underline",marginTop:"5px",fontSize:"larger"}}>Don’t have an account? Create account</div>
     </div>)}
   <div>
-  {!loginToggle && <div className="logincontainer">
-        <h4 style={{margin:0}}>Create Ivokart Seller</h4>
+  {!loginToggle && <div className="logincontainer customerform">
+        <h4 >Create Ivokart Seller</h4>
         <div  >
           <label>Username:</label>
           <input name="username"
@@ -82,23 +82,26 @@ const Login= () => {
             required 
             pattern="^[A-Z]-\d{3}$"
             title="Sample: A-111"
-            style={{ border: oit.adminid && !/^[A-Z]-\d{3}$/.test(oit.adminid) ? "3px solid red" : "" }}
+            className={oit.adminid && !/^[A-Z]-\d{3}$/.test(oit.adminid) ? "error-border" : ""}
           />
+                        <span className={`error-message ${oit.adminid && !/^[A-Z]-\d{3}$/.test(oit.adminid) ? "show" : ""}`}>
+                        Match as sample: A-111
+              </span>
         </div>
-        {oit.adminid && !/^[A-Z]-\d{3}$/.test(oit.adminid) &&  <span style={{fontSize:"15px",color:"red",textDecoration:"none",backgroundColor:"white",margin:"5px"}}>Sample: A-111</span>}
- 
         <div>
-          <label>Password:</label>
-          <input name="password"
-            type="password" 
-            onChange={handleChange} value={oit.password}
-            required 
-            pattern="^[A-Z].{4}[A-Z]$"
-            title="Password must be 6 characters long, start & end with an uppercase letter."
-            style={{ border: oit.password && !/^[A-Z].{4}[A-Z]$/.test(oit.password) ? "3px solid xx`x`red" : "" }}
-          />
-        </div>
-        {oit.password && !/^[A-Z].{4}[A-Z]$/.test(oit.password) &&  <span style={{fontSize:"15px",color:"red",textDecoration:"none",backgroundColor:"white",margin:"5px"}}>Password must be 6 characters, start & end with an uppercase.</span>}
+              <label>Password:</label>
+              <input
+                name="password"
+                type="password"
+                onChange={handleChange}
+                value={oit.password}
+                required
+                pattern="^[A-Z].{5}$"
+                title="Password must be 6 characters long, start & end with an uppercase letter."
+                className={oit.password && !/^[A-Z].{5}$/.test(oit.password) ? "error-border" : ""}
+              />
+              <span className={`error-message ${oit.password && !/^[A-Z].{5}$/.test(oit.password) ? "show" : ""}`}>Required 6 characters,start with uppercase.</span>
+            </div>
         <button
   style={{marginTop: "10px" }}
   onClick={createcustomer}
@@ -106,13 +109,13 @@ const Login= () => {
     oit.name.trim() !== "" &&
     oit.adminid.trim() !== "" &&
     oit.password.trim() !== "" &&
-    /^[A-Z].{4}[A-Z]$/.test(oit.password) && /^[A-Z]-\d{3}$/.test(oit.adminid))}
+    /^[A-Z].{5}$/.test(oit.password) && /^[A-Z]-\d{3}$/.test(oit.adminid))}
 >
   Create Seller
 </button>
  
+        {!loginToggle && <div onClick={()=>setloginToggle(!loginToggle)} className="toggle-link">Already have an account? Login</div>}
         </div>}
-        {!loginToggle && <div onClick={()=>setloginToggle(!loginToggle)} style={{textAlign:"center",display:"block",marginLeft:"50px",textDecoration:"underline",marginTop:"5px",fontSize:"larger"}}>Already have an account? Login</div>}
         
   </div>
   </div>
