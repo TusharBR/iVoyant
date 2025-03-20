@@ -5,6 +5,8 @@
     --light-bg: #dfe6e9;
     --dark-text: #2d3436;
     --white: #ffffff;
+   --danger:red;
+   --primary-dark:#1e3c72;
 }
 
 h2 {
@@ -63,8 +65,8 @@ h1 {
     position: absolute;
     top: -8px;
     right: -20px;
-    background: red;
-    color: white;
+    background: var(--danger);
+    color:var(--white);
     font-size: 20px;
     font-weight: bold;
     padding: 0px 7px;
@@ -84,18 +86,18 @@ table {
     width: 100%;
     border-collapse: collapse;
     background-color: var(--dark-text);
-    color: white;
+    color: var(--white);
 }
 
  th, 
  td {
-    border: 1px solid white;
+    border: 1px solid var(--white);
     padding: 10px;
     text-align: left;
 }
 
  th {
-    background-color: #1e3c72; /* A slightly darker shade for header */
+    background-color: var(--primary-dark); 
 }
 
 td {
@@ -103,14 +105,14 @@ td {
 }
 
 .custom-table .action-btn {
-    border: 1px solid red;
+    border: 1px solid var(--danger);
     padding: 5px;
-    background-color: #74b9ff;
+    background-color:var(--secondary-color);
     cursor: pointer;
     color: black;
 }
 
 .custom-table .action-btn:hover {
     background-color: transparent;
-    color: white;
+    color: var(--white);
 }

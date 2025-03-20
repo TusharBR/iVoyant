@@ -78,7 +78,7 @@ const Login = () => {
                 className={oit.mail && !/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(oit.mail) ? "error-border" : ""}
               />
               <span className={`error-message ${oit.mail && !/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(oit.mail) ? "show" : ""}`}>
-                Enter valid mail address (example@gmail.com)
+                Enter valid mail address
               </span>
             </div>
 
@@ -95,7 +95,7 @@ const Login = () => {
                 className={oit.password && !/^[A-Z].{5}$/.test(oit.password) ? "error-border" : ""}
               />
               <span className={`error-message ${oit.password && !/^[A-Z].{5}$/.test(oit.password) ? "show" : ""}`}>
-                Required 6 characters, start with an uppercase.
+                Required 6 characters, start with uppercase.
               </span>
             </div>
 

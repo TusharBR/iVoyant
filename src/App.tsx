@@ -8,14 +8,12 @@ function App() {
   return (
     <>
      <Router>
-       
       <Routes>
-       
       <Route  path="/"  element={<Login />} />
       <Route  path="/admin"  element={<Adminlogin/>} />
       <Route  path="/Customermp"  element={<Customermp/>} />
       <Route  path="/Adminmp"  element={<Adminmp/>} />
-          <Route path="*" element={<Navigate to="/" />} />
+      <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
     </>

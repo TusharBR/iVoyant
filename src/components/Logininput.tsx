@@ -13,15 +13,15 @@ const Logininput = ({ handleLogin }: InputProps) => {
 
   return (
 <>
-<div className="logincontainer">
+<div className="logincontainer inputcontainer">
       <h4 style={{ margin: 0 }}>Login</h4>
       <div>
-        <label>Username:</label>
-        <input name="username" type="text" onChange={chandleChange} value={coit.username} required />
+        <label className="labels" >Username:</label>
+        <input  name="username" type="text" onChange={chandleChange} value={coit.username} required />
       </div>
 
       <div>
-        <label>Password:</label>
+        <label className="labels">Password:</label>
         <input
           name="password"
           type="password"
@@ -34,7 +34,7 @@ const Logininput = ({ handleLogin }: InputProps) => {
       </div>
 
       {/* Reserved space for error message to prevent shifting */}
-      <span className={`error-message ${coit.password && !/^[A-Z].{5}$/.test(coit.password) ? "show" : ""}`}>Required 6 characters,start with an uppercase.
+      <span className={`error-message ${coit.password && !/^[A-Z].{5}$/.test(coit.password) ? "show" : ""}`}>Required 6 characters,start with uppercase.
       </span>
 
       <button
